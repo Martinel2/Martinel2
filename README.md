@@ -1,4 +1,20 @@
-### Hi there 👋
+## 👋 Welcome to My Github!!
+
+#### Baekjoon     
+[![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=kkuldangi3)](https://solved.ac/kkuldangi3/)<br/>
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=kkuldangi3)](https://solved.ac/kkuldangi3/)
+
+### ⚙ Tech Stack ⚙
+
+#### 💪 My Primary Languages
+<img src = "https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=JAVA&logoColor=white"/>
+
+#### 😐 I learned, but poor use
+<img src = "https://img.shields.io/badge/C-blue?style=for-the-badge&logo=C&logoColor=white"/>  <img src = "https://img.shields.io/badge/HTML-1E8CBE?style=for-the-badge&logo=HTML5&logoColor=white"/>  <img src = "https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript&logoColor=white"/>  <img src = "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+
+
+#### 🌱 I’m currently learning 
+<img src = "https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>  <img src = "https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>  
 
 <!--
 **Martinel2/Martinel2** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
