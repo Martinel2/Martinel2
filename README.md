@@ -17,8 +17,8 @@
 <img src = "https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>  <img src = "https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>  
 
 #### Other links
-<img src = "https://img.shields.io/badge/velog-20C997?style=for-the-badge&logo=velog&logoColor=white"/> : https://velog.io/@kkuldangi3 <br/><br/>
-<img src = "https://img.shields.io/badge/My_email-8B89CC?style=for-the-badge&logo=gmail&logoColor=white"/> : kkuldangi3@naver.com
+[<img src = "https://img.shields.io/badge/velog-20C997?style=for-the-badge&logo=velog&logoColor=white"/>](https://velog.io/@kkuldangi3) <br/>
+[<img src = "https://img.shields.io/badge/My_email-8B89CC?style=for-the-badge&logo=gmail&logoColor=white"/>](kkuldangi3@naver.com)
 
 <!--
 **Martinel2/Martinel2** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
