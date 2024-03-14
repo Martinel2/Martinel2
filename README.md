@@ -18,7 +18,7 @@
 
 #### Other links
 [<img src = "https://img.shields.io/badge/velog-20C997?style=for-the-badge&logo=velog&logoColor=white"/>](https://velog.io/@kkuldangi3/posts) <br/>
-[<img src = "https://img.shields.io/badge/My_email-8B89CC?style=for-the-badge&logo=gmail&logoColor=white"/>](kkuldangi3@naver.com)
+<img src = "https://img.shields.io/badge/My_email-8B89CC?style=for-the-badge&logo=gmail&logoColor=white"/> : kkuldangi3@naver.com
 
 <!--
 **Martinel2/Martinel2** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
