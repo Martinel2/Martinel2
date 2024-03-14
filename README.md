@@ -1,6 +1,6 @@
 ## 👋 Welcome to My Github!!
 
-[![My GitHub stats](https://githubreadmestats.vercel.app/api?username=Martinel2)](https://github.com/Martinel2/github-readme-stats)
+[![My GitHub stats](https://github-readme-stats.vercel.app/api?username=Martinel2)](https://github.com/Martinel2/github-readme-stats)
 
 #### Baekjoon     
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=kkuldangi3)](https://solved.ac/kkuldangi3/)<br/>
