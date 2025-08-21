@@ -8,7 +8,7 @@
 
 ### ⚙ Tech Stack ⚙
 
-<img src = "https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src = "https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=spring_mvc&logoColor=white"/> <img src = "https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=spring_data_jpa&logoColor=white"/> <img src = "https://img.shields.io/badge/logo=springboot&logoColor=white"/> 
+<img src = "https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src = "https://img.shields.io/badge/spring_mvc-6DB33F?style=for-the-badge&logoColor=white"/> <img src = "https://img.shields.io/badge/spring_data_jpa-6DB33F?style=for-the-badge&logoColor=white"/> <img src = "https://img.shields.io/badge/querydsl-6DB33F?style=for-the-badge&logoColor=white"/>
 
 
 
