@@ -1,7 +1,6 @@
-## Backend Developer
+# Backend Developer
 
 [![My GitHub stats](https://github-readme-stats.vercel.app/api?username=Martinel2)](https://github.com/Martinel2/github-readme-stats)
-
 
 ## ⚙ Tech Stack 
 
@@ -15,7 +14,7 @@
 
 <img src = "https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white"/>
 
-<img src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white"/>
+<img src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white"/> <img src="https://img.shields.io/badge/visual_studio_code-6492FE?style=for-the-badge&logoColor=white"/> <img src="https://img.shields.io/badge/postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white"/>
 
 
 ### Dev-Ops
@@ -24,15 +23,16 @@
 
 <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"/> 
 
-<img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/> <img src="https://img.shields.io/badge/elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white"/> <img src="https://img.shields.io/badge/redis-FF4438?style=for-the-badge&logo=redis&logoColor=white"/> 
+<img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/> <img src="https://img.shields.io/badge/elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white"/> <img src="https://img.shields.io/badge/redis-FF4438?style=for-the-badge&logo=redis&logoColor=white"/> <img src = "https://img.shields.io/badge/firebase_cloud_messaging-DD2C00?style=for-the-badge&logo=firebase&logoColor=white"/>
 
-<img src="https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=openai&logoColor=white"/>
+<img src="https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=openai&logoColor=white"/> <img src="https://img.shields.io/badge/google_gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white"/> 
+ <img src="https://img.shields.io/badge/cursor-000000?style=for-the-badge&logoColor=white"/> 
 
 
 ### DataBase
 
 <img src = "https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/> <img src ="https://img.shields.io/badge/Milvus-00A1EA?style=for-the-badge&logo=Milvus&logoColor=white"/>
-
+<img src = "https://img.shields.io/badge/firebase-DD2C00?style=for-the-badge&logo=firebase&logoColor=white"/>
 
 ## PS
 
