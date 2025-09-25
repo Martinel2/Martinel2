@@ -6,7 +6,7 @@
 
 ### Backend
 
-<img src = "https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src = "https://img.shields.io/badge/spring_mvc-6DB33F?style=for-the-badge&logoColor=white"/> <img src = "https://img.shields.io/badge/spring_data_jpa-6DB33F?style=for-the-badge&logoColor=white"/> <img src = "https://img.shields.io/badge/querydsl-6DB33F?style=for-the-badge&logoColor=white"/>
+<img src = "https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src = "https://img.shields.io/badge/spring_mvc-6DB33F?style=for-the-badge&logoColor=white"/> <img src = "https://img.shields.io/badge/spring_data_jpa-6DB33F?style=for-the-badge&logoColor=white"/> <img src = "https://img.shields.io/badge/querydsl-6DB33F?style=for-the-badge&logoColor=white"/> <img src = "https://img.shields.io/badge/spring AI-6DB33F?style=for-the-badge&logoColor=white"/>
 
 <img src = "https://img.shields.io/badge/junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white"/> <img src = "https://img.shields.io/badge/mockito-25A162?style=for-the-badge&logoColor=white"/>
 
