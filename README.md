@@ -1,7 +1,5 @@
 # Backend Developer
 
-[![My GitHub stats](https://github-readme-stats.vercel.app/api?username=Martinel2)](https://github.com/Martinel2/github-readme-stats)
-
 ## ⚙ Tech Stack 
 
 ### Backend
