@@ -41,7 +41,7 @@ Jae Hyeong Kim, Backend Developer
 
 ## 💡 PS
 
-[Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=kkuldangi3)
+![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=kkuldangi3)
 
 ---
 
