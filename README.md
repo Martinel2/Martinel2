@@ -112,6 +112,9 @@ Jae Hyeong Kim, Backend Developer
     * Backend 기초 지식(Rest API, DB 등) 공유 및 코드 리뷰 수행 
     * 성과를 인정 받아 동아리 내 공로상 수상
 
+### Velog 글 작성 / 2023.07 ~
+* 새로 배운 것 혹은 프로젝트 일대기 작성
+* ~최근에는 많이 적지 못함...~
 ---
 
 ## 📞 Contacts
