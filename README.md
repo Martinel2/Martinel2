@@ -50,6 +50,8 @@ Jae Hyeong Kim, Backend Developer
 * 부산 DATA WEEK - 데이터 활용 경진대회 / 최우수상 / 2025.09.23 / 부산테크노파크
 * AI커리어스쿨 창업톤(L:AUNCH) / 장려상 / 2025.09.28 / Root Impact
 
+---
+
 ## Projects
 
 ### [Pilltip : 개인맞춤 AI 의약관리 애플리케이션](https://github.com/PillTipKR/Pilltip) / Backend Developer / 2025.03 ~ 2025.12
@@ -110,7 +112,7 @@ Jae Hyeong Kim, Backend Developer
     * Backend 기초 지식(Rest API, DB 등) 공유 및 코드 리뷰 수행 
     * 성과를 인정 받아 동아리 내 공로상 수상
 
-
+---
 
 ## 📞 Contacts
 Tel : 010-5329-4516 <br/>
