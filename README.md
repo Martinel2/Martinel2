@@ -107,6 +107,8 @@ Jae Hyeong Kim, Backend Developer
 
 ## Other Activities
 
+### 정보처리기사 취득 / 2025.09
+
 ### 부산대학교 APPTIVE 동아리 활동 / 2025.03 ~ 2026.01
 * Backend 멘토 역할 수행
     * Backend 기초 지식(Rest API, DB 등) 공유 및 코드 리뷰 수행 
