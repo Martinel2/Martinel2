@@ -107,22 +107,22 @@ Jae Hyeong Kim, Backend Developer
 
 ## Other Activities
 
-### SK Summit 2025 / 2025.11
-* 부산대학교 대표 전시 부스 운영
+* SK Summit 2025 / 2025.11
+    * 부산대학교 대표 전시 부스 운영
 
-### 정보처리기사 취득 / 2025.09
+* 정보처리기사 취득 / 2025.09
 
-### K-ICT Week in Busan / 2025.07
-* 부산대학교 대표 전시 부스 운영
+* K-ICT Week in Busan / 2025.07
+    * 부산대학교 대표 전시 부스 운영
 
-### 부산대학교 APPTIVE 동아리 활동 / 2025.03 ~ 2026.01
-* Backend 멘토 역할 수행
-    * Backend 기초 지식(Rest API, DB 등) 공유 및 코드 리뷰 수행 
-    * 성과를 인정 받아 동아리 내 공로상 수상
+* 부산대학교 APPTIVE 동아리 활동 / 2025.03 ~ 2026.01
+    * Backend 멘토 역할 수행
+        * Backend 기초 지식(Rest API, DB 등) 공유 및 코드 리뷰 수행 
+        * 성과를 인정 받아 동아리 내 공로상 수상
 
-### [Velog](https://velog.io/@kkuldangi3/posts) 글 작성 / 2023.07 ~
-* 새로 배운 것 혹은 프로젝트 일대기 작성
-* ~최근에는 많이 적지 못함...~
+* [Velog](https://velog.io/@kkuldangi3/posts) 글 작성 / 2023.07 ~
+    * 새로 배운 것 혹은 프로젝트 일대기 작성
+    * ~최근에는 많이 적지 못함...~
 ---
 
 ## 📞 Contacts
