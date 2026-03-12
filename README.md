@@ -107,6 +107,8 @@ Jae Hyeong Kim, Backend Developer
 
 ## Other Activities
 
+### SK Summit 2025 전시 / 2025.11
+
 ### 정보처리기사 취득 / 2025.09
 
 ### 부산대학교 APPTIVE 동아리 활동 / 2025.03 ~ 2026.01
