@@ -47,7 +47,7 @@ Jae Hyeong Kim, Backend Developer
 
 ## 🏆 Awards
 * 2025 SW 중심대학 디지털 경진대회 / 후원기업상(딥노이드) / 2025.08.12 / SW중심대학협의회
-* 부산 DATA WEEK - 데이터 활용 경진대회 / 최우수상 / 2025.09.23 / 부산테크노파크
+* 부산 DATA WEEK - 데이터 활용 우수사례 공모전 / 최우수상 / 2025.09.23 / 부산테크노파크
 * AI커리어스쿨 창업톤(L:AUNCH) / 장려상 / 2025.09.28 / Root Impact
 
 ---
@@ -107,7 +107,7 @@ Jae Hyeong Kim, Backend Developer
 
 ## Other Activities
 
-### SK Summit 2025 전시 / 2025.11
+### SK Summit 2025 전시 부스 운영/ 2025.11
 
 ### 정보처리기사 취득 / 2025.09
 
