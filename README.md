@@ -18,9 +18,6 @@ Jae Hyeong Kim, Backend Developer
 
 <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"/> <img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/> 
 
-<img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=Grafana&logoColor=white"/> <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white"/> 
-
-
 <img src = "https://img.shields.io/badge/firebase_cloud_messaging-DD2C00?style=for-the-badge&logo=firebase&logoColor=white"/>
 
 ### AI
