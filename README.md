@@ -128,5 +128,4 @@ Jae Hyeong Kim, Backend Developer
 ---
 
 ## 📞 Contacts
-Tel : 010-5329-4516 <br/>
 Email : kkuldangi3@naver.com
