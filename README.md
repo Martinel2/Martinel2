@@ -3,14 +3,33 @@ Jae Hyeong Kim, Backend Developer
 
 ## 📞 Contacts
 Email : kkuldangi3@naver.com
----
 
 ## Introduce
 저는 에러를 두려워하지 않는 백엔드 개발자입니다!
-* 81번의 가설 수립과 검증을 반복하며 컨테이너 구동 타이밍에 따른 생명주기 문제를 해결 및 에러의 근본 원인을 끝까지 추적하여 CI/CD 파이프라인 구축
+* 81번의 가설 수립과 검증을 반복하며 컨테이너 구동 타이밍에 따른 문제 해결 및 에러의 근본 원인을 끝까지 추적하여 CI/CD 파이프라인 구축
 * 1GB 규모의 약품 데이터를 전처리하고 정규표현식 및 Batch API를 도입하여 API 호출 비용 94% 절감
 * 외래키 참조 무결성 오류 해결을 위한 ERD 재설계로 데이터 정합성 확보
----
+
+## ⚙ Tech Stack 
+
+### Backend Engineering
+🌱 Spring Boot ✅ JUnit5
+
+### DB
+🐬 MySQL 🔍 Elasticsearch ⚡ Redis
+
+🌐 Milvus & Weaviate
+
+### DevOps / Infra
+☁️ AWS EC2 & Azure 🐳 Docker & Docker Compose
+
+🏗️ GitHub Actions 🌐 Nginx
+
+🔔 Firebase Cloud Messaging (FCM)
+
+
+### AI
+🧠 OpenAI API 🤖 Spring AI
 
 ## Projects
 
@@ -68,7 +87,6 @@ Email : kkuldangi3@naver.com
    * 초기 세션 및 JS 기반의 인증 정보 처리 시 브라우저 쿠키를 통한 보안 취약점 확인
    * 기존 블로그 레퍼런스들과 최신 Spring Security 버전 간 설정 방식 차이로 인한 호환성 에러 발생
    * 각 레거시 코드 라인의 역할 인지 및 공식 문서와의 교차 검증을 통한 최신 버전 설정으로 재구성
----
 
 ## Other Activities
 
@@ -87,40 +105,13 @@ Email : kkuldangi3@naver.com
 
 * [Velog](https://velog.io/@kkuldangi3/posts) 글 작성 / 2023.07 ~
     * 새로 배운 것 혹은 프로젝트 일대기 작성
-    * ~최근에는 많이 적지 못함...~
----
 
 ## 🏆 Awards
 * 부산대학교 정보컴퓨터공학부 졸업과제 SW/AI 분과 / 금상 / 2025.10.01 / 부산대학교 정보컴퓨터공학부
 * AI커리어스쿨 창업톤(L:AUNCH) / 장려상 / 2025.09.28 / Root Impact
 * 부산 DATA WEEK - 데이터 활용 우수사례 공모전 / 최우수상 / 2025.09.23 / 부산테크노파크
 * 2025 SW 중심대학 디지털 경진대회 SW부문/ 후원기업상(딥노이드) / 2025.08.12 / SW중심대학협의회
----
 
-## ⚙ Tech Stack 
-
-### Backend Engineering
-<img src = "https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/> <img src = "https://img.shields.io/badge/junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white"/>
-
-### DB
-<img src = "https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/> 
-
-<img src ="https://img.shields.io/badge/Milvus-00A1EA?style=for-the-badge&logo=Milvus&logoColor=white"/> <img src ="https://img.shields.io/badge/Weaviate-6DB33F?style=for-the-badge&logo=Weaviate&logoColor=white"/> 
-
-<img src="https://img.shields.io/badge/elasticsearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white"/> <img src="https://img.shields.io/badge/redis-FF4438?style=for-the-badge&logo=redis&logoColor=white"/> 
-
-### DevOps / Infra
-<img src="https://img.shields.io/badge/Amazon_EC2-FF9900?style=for-the-badge&logo=Amazon-EC2&logoColor=white"/> <img src="https://img.shields.io/badge/azure-6492FE?style=for-the-badge&logoColor=white"/> 
-<img src="https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=nginx&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"/> <img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/> 
-
-<img src = "https://img.shields.io/badge/firebase_cloud_messaging-DD2C00?style=for-the-badge&logo=firebase&logoColor=white"/>
-
-### AI
-<img src = "https://img.shields.io/badge/spring AI-6DB33F?style=for-the-badge&logoColor=white"/> <img src="https://img.shields.io/badge/openai API-412991?style=for-the-badge&logo=openai&logoColor=white"/>
-
----
 
 ## 📖 Education
 ### 부산대학교 학사 (2022.03 ~ 2026.02)
@@ -131,11 +122,8 @@ Email : kkuldangi3@naver.com
 - 컴퓨터공학부
 - GPA : 4.2 / 4.5 
 
----
-
 ## 💡 PS
 
 ![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=kkuldangi3)
 
----
 
