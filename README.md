@@ -63,7 +63,7 @@ Email : kkuldangi3@naver.com
     * p(95) 지연 시간 1.22s -> 226.31ms로 약 81% 대폭 단축
     * 최대 지연 시간 6.29s -> 2.79s로 개선
 
-### [Todo 웹 애플리케이션 및 CI/CD 인프라 구축](https://github.com/Martinel2/Project_Todo) / 개인프로젝트 / 2024.02 ~ 2024.03
+### [Todo 웹 애플리케이션 및 CI/CD 인프라 구축](https://github.com/Martinel2/Project_Todo) / 개인프로젝트 / 2025.02 ~ 2025.03
 * 컨테이너 오케스트레이션 및 리버스 프록시 구축
    * Docker Compose를 활용하여 Spring Boot WAS, MySQL, Nginx 웹 서버를 동일한 가상 네트워크로 구성
    * Nginx 리버스 프록시(Reverse Proxy) 설정으로 클라이언트의 요청을 WAS로 안전하게 라우팅하는 배포 환경 구축
