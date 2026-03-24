@@ -58,11 +58,6 @@ Email : kkuldangi3@naver.com
     *  RAG를 이용해 할루시네이션 및 개인정보 유출 방지
     *  Spring AI를 이용해 Agentic AI 구현
 
-### [트래픽 스트레스 테스트](https://github.com/Martinel2/traffic-control) / 우테코 프리코스 오픈 미션 / 2025.11 ~ 2025.11
-* 안정적인 서버 운영 및 병목 지점 파악을 위해 Grafana-Prometheus를 이용한 시스템 모니터링 환경 구축 및 k6를 이용해 트래픽 부하 상황 가정
-    * p(95) 지연 시간 1.22s -> 226.31ms로 약 81% 대폭 단축
-    * 최대 지연 시간 6.29s -> 2.79s로 개선
-
 ### [Todo 웹 애플리케이션 및 CI/CD 인프라 구축](https://github.com/Martinel2/Project_Todo) / 개인프로젝트 / 2025.02 ~ 2025.03
 * 컨테이너 오케스트레이션 및 리버스 프록시 구축
    * Docker Compose를 활용하여 Spring Boot WAS, MySQL, Nginx 웹 서버를 동일한 가상 네트워크로 구성
