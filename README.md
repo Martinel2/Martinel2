@@ -38,14 +38,18 @@ Email : kkuldangi3@naver.com
 - **기술 스택:** Spring Boot, MySQL, Weaviate, Elasticsearch, Redis, Docker Compose, Spring AI, GPT Batch API, Firebase Cloud Messaging (FCM)
 
 - **Elasticsearch + Redis 검색 응답 속도 5s $\rightarrow$ 0.8ms 단축**
-    - **문제**
-        - RDBMS `LIKE %keyword%` 사용으로 인한 인덱스 무력화와 다중 JOIN으로 지연(5~7s) 발생
-        - 디자이너의 ‘검색 지연 1초 이내’ 요구
+    - **문제 -** `LIKE %keyword%` 쿼리로 인한 인덱스 무력화와 사용자 맞춤 DUR을 위한 다중 JOIN 연산의 중첩
+        → 로컬(Postman) 기준 **5~7초 이상의 응답 지연** 발생
+    
     - **해결**
-        - **RDBMS의 한계 인지** 및 **Elasticsearch(EdgeNgram, Ngram)** 도입으로 자동완성 로직 구현
-        - 실시간 검색 결과에 약품 상충작용 태깅을 위한 **Redis** 사용
-        - 약품 데이터의 빈번한 업데이트에 대비해 로컬 캐시가 아닌 Redis 사용
-    - **결과 -** 검색 응답 속도를 **0.8ms(Postman 기준)로 단축**하여 UX를 획기적으로 개선
+        - **데이터 동기화 및 인프라 코드화(IaC) - Elasticsearch API**
+            - RDBMS 데이터를 안전하게 이관하는 `DataSync` 파이프라인 구축
+            - `Provider` 패턴과 `Initializer`를 도입해 멀티 필드 (N-gram, Edge N-gram) 인덱스의 매핑과 생명주기를 애플리케이션 단에서 객체지향적으로 제어
+        - **조회 성능 최적화 - Redis**
+            - DUR 태깅 연산을 Redis에 `{type}:DUR:{DUR_type}:{drugId}` 스키마로 캐싱
+            - 검색 결과 반환 시 O(1)의 시간 복잡도로 즉시 태깅되도록 설계
+    - **결과**
+        - DB 커넥션 병목 완벽 해소 및 **검색 응답 속도 최대 7초 → 0.8ms로 단축**
 
 - **논리회로의 모듈화 개념을 응용한 전처리 파이프라인으로 LLM 비용 94% 절감**
     - **문제**
