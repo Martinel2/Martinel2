@@ -34,9 +34,6 @@ Jae Hyeong Kim, Backend Developer
 `OpenAI API` `GPT Batch API` `RAG` `Vector DB` `Firebase Cloud Messaging`
 
 
-### AI
-🧠 OpenAI API 🤖 Spring AI
-
 ## Projects
 ### [Pilltip: 개인맞춤 AI 의약관리 애플리케이션](https://github.com/PillTipKR/Pilltip)
 
