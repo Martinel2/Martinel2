@@ -2,132 +2,95 @@ Jae Hyeong Kim, Backend Developer
 ---
 
 ## 📞 Contacts
-Email : kkuldangi3@naver.com
+- Email: kkuldangi3@naver.com
+- GitHub: [github.com/Martinel2](https://github.com/Martinel2)
+- Velog: [velog.io/@kkuldangi3](https://velog.io/@kkuldangi3/posts)
 
-## Introduce
-저는 에러를 두려워하지 않는 백엔드 개발자입니다!
-* 84번의 가설 수립과 검증을 반복하며 컨테이너 구동 타이밍에 따른 문제 해결 및 에러의 근본 원인을 끝까지 추적하여 CI/CD 파이프라인 구축
-* 1GB 규모의 약품 데이터를 전처리하고 정규표현식 및 Batch API를 도입하여 API 호출 비용 94% 절감
-* 외래키 참조 무결성 오류 해결을 위한 ERD 재설계로 데이터 정합성 확보
+## About
+
+저는 시스템을 안정화하고 이를 기록하려 노력하는 개발자입니다!
+
+- 1GB 규모의 약품 데이터를 전처리하고 문장 블록화, 정규표현식, GPT Batch API를 적용해 LLM 변환 비용을 약 `$200`에서 `$11.18`로 줄였습니다.
+- Elasticsearch와 Redis를 함께 사용해 약품 검색 응답 시간을 로컬 기준 최대 `5~7초`에서 `0.8ms` 수준으로 개선했습니다.
+- AI가 할 일과 코드가 보장할 일을 분리해, LLM/RAG 기능을 검증 가능한 백엔드 구조 안에 배치하는 데 관심이 있습니다.
+
 
 ## ⚙ Tech Stack 
 
-### Backend Engineering
-🌱 Spring Boot ✅ JUnit5
+### Backend
 
-### DB
-🐬 MySQL 🔍 Elasticsearch ⚡ Redis
+`Spring Boot` `Spring Security` `JUnit5` `Spring AI`
 
-🌐 Milvus & Weaviate
+### Database / Search / Cache
+
+`MySQL` `Elasticsearch` `Redis` `Milvus` `Weaviate`
 
 ### DevOps / Infra
-☁️ AWS EC2 & Azure 🐳 Docker & Docker Compose
 
-🏗️ GitHub Actions 🌐 Nginx
+`AWS EC2` `Azure` `Docker` `Docker Compose` `GitHub Actions` `Nginx`
 
-🔔 Firebase Cloud Messaging (FCM)
+### AI / Automation
+
+`OpenAI API` `GPT Batch API` `RAG` `Vector DB` `Firebase Cloud Messaging`
 
 
 ### AI
 🧠 OpenAI API 🤖 Spring AI
 
 ## Projects
-### [Pilltip : 개인맞춤 AI 의약관리 애플리케이션](https://github.com/PillTipKR/Pilltip)
+### [Pilltip: 개인맞춤 AI 의약관리 애플리케이션](https://github.com/PillTipKR/Pilltip)
 
-- **기간 / 역할:** 2025.03 ~ 2025.12 / Backend Developer (기여도 100%)
-- **기술 스택:** Spring Boot, MySQL, Weaviate, Elasticsearch, Redis, Docker Compose, Spring AI, GPT Batch API, Firebase Cloud Messaging (FCM)
+- Period / Role: 2025.03 ~ 2025.12 / Backend/AI Developer
+- Stack: Spring Boot, MySQL, Weaviate, Elasticsearch, Redis, Docker Compose, Spring AI, GPT Batch API, FCM
 
-- **Elasticsearch + Redis 검색 응답 속도 5s $\rightarrow$ 0.8ms 단축**
-    - **문제 -** `LIKE %keyword%` 쿼리로 인한 인덱스 무력화와 사용자 맞춤 DUR을 위한 다중 JOIN 연산의 중첩
-        → 로컬(Postman) 기준 **5~7초 이상의 응답 지연** 발생
-    
-    - **해결**
-        - **데이터 동기화 및 인프라 코드화(IaC) - Elasticsearch API**
-            - RDBMS 데이터를 안전하게 이관하는 `DataSync` 파이프라인 구축
-            - `Provider` 패턴과 `Initializer`를 도입해 멀티 필드 (N-gram, Edge N-gram) 인덱스의 매핑과 생명주기를 애플리케이션 단에서 객체지향적으로 제어
-        - **조회 성능 최적화 - Redis**
-            - DUR 태깅 연산을 Redis에 `{type}:DUR:{DUR_type}:{drugId}` 스키마로 캐싱
-            - 검색 결과 반환 시 O(1)의 시간 복잡도로 즉시 태깅되도록 설계
-    - **결과**
-        - DB 커넥션 병목 완벽 해소 및 **검색 응답 속도 최대 7초 → 0.8ms로 단축**
+**Search Performance Optimization**
 
-- **논리회로의 모듈화 개념을 응용한 전처리 파이프라인으로 LLM 비용 94% 절감**
-    - **문제**
-        - 1GB 약품 데이터 변환 시 팀 자본 대비 과도한 LLM 토큰 과금(약 $200)이 예상
-        - 팀 내에서는 어쩔 수 없는 지출이니 감내하고 단순 API를 호출하자는 의견이 존재
-    - **해결**
-        - 정규표현식을 통한 데이터 클리닝
-        - 하드웨어 모듈화 관점을 적용한 문장 패턴 블록화 및 해시 테이블 인덱싱 매핑
-        - 100개 샘플을 분석 후 처리해 70%의 중복률 탐지
-            - 팀원을 주도적으로 설득 →  1주일의 전처리 시간 확보
-        - GPT Batch API를 사용해 추가 50% 절감
-    - **결과**
-        - 처리 비용 $11.18로, 총 94% 절감
-        - '더 나은 방향을 위해 동료를 설득하고 일이 되게 만드는' 주도적 엔지니어링 달성
+- Problem: `LIKE %keyword%` 검색과 사용자 맞춤 DUR 판단을 위한 다중 JOIN으로 로컬 Postman 기준 5~7초 이상의 응답 지연이 발생했습니다.
+- Solution:
+  - RDBMS 데이터를 Elasticsearch로 이관하는 `DataSync` 파이프라인을 구축했습니다.
+  - Provider 패턴과 Initializer를 사용해 N-gram, Edge N-gram 기반 인덱스 매핑과 생명주기를 애플리케이션에서 제어했습니다.
+  - DUR 태깅 결과를 Redis에 `{type}:DUR:{DUR_type}:{drugId}` 형태로 캐싱해 검색 결과 반환 시 O(1)에 가깝게 태깅되도록 설계했습니다.
+- Result: DB 커넥션 병목을 줄이고 검색 응답 시간을 최대 7초 수준에서 0.8ms 수준으로 단축했습니다.
 
-- **신뢰성 확보를 위한 2-Tier Agentic AI (RAG) 구축**
-    - 약품 정보 탐색 시 LLM의 할루시네이션 방지 및 민감 정보 유출을 막기 위해, 내부 Vector DB(Weaviate)와 Spring AI를 연동한 RAG 기반 아키텍처 설계 및 구현
+**LLM Cost Optimization**
+
+- Problem: 1GB 규모의 약품 데이터 변환에 약 `$200`의 LLM 비용이 예상되었습니다.
+- Solution:
+  - 정규표현식 기반 데이터 클리닝을 수행했습니다.
+  - 문장을 block 단위로 보고 fuzzy matching과 사전 기반 어미 처리를 적용했습니다.
+  - 샘플 분석으로 약 70% 중복률을 확인하고, 팀을 설득해 1주일의 전처리 시간을 확보했습니다.
+  - GPT Batch API를 적용해 비실시간 대량 변환 비용을 추가 절감했습니다.
+- Result: 변환 대상 데이터를 `1GB -> 326MB`로 줄이고, 비용을 `$200 -> $11.18`로 낮췄습니다.
+
+**RAG Architecture**
+
+- Weaviate에 약품 효능 정보를 임베딩하고 사용자 증상과 유사도 기반으로 매핑하는 구조를 설계했습니다.
+- 임신 여부, 복용 중인 약, 기저질환 등 민감 정보는 외부 LLM에 넘기지 않는 방향으로 AI 호출 범위를 제한했습니다.
 
 
-### [Todo 웹 애플리케이션 및 CI/CD 인프라 구축](https://github.com/Martinel2/Project_Todo)
+## Open Source Contribution
 
-- **기간 / 역할:** 2025.02 ~ 2025.03 / 개인 프로젝트
-- **기술 스택:** Spring Boot, MySQL, Docker Compose, Nginx, GitHub Actions, AWS EC2
+### [Rhwp](https://github.com/edwardkim/rhwp)
+- Period: 2025.04 ~ 
 
-- **84번의 가설 검증과 컨테이너 의존성(Race Condition) 해결**
-    - **문제 -** GitHub Actions 기반 CI/CD 구축 중, CI 단계의 테스트 DB 종속성 문제와 CD 배포 단계의 컨테이너 연결 실패 등 복합적인 장애 발생
-        
-    - **해결** - 84번의 에러 로그 분석
-        - **CI 환경 격리 -** 테스트 전용 프로파일 설정 및 **H2 인메모리 DB**를 도입하여 테스트 독립성 확보
-        - **CD 의존성 제어**
-            - WAS와 DB 컨테이너 간의 **구동 타이밍 불일치**임을 파악하고 Docker Compose의 `depends_on` 옵션으로 실행 순서를 강제 제어
-            - restart: on-failure 장애 복구 패턴을 적용하여 DB 초기화 지연으로 인한 WAS 커넥션 실패를 자동 재시작으로 완벽 제어
-    - **결과 -** 의존성을 명확히 확립하여 배포 파이프라인의 **안정성 확보**
+Rust 기반 HWP/HWPX 라이브러리에서 이슈 분석, 수정 계획, PR 작성, 테스트와 CI 대응을 수행했습니다.
 
+- Issues: [#1188](https://github.com/edwardkim/rhwp/issues/1188), [#1244](https://github.com/edwardkim/rhwp/issues/1244), [#1267](https://github.com/edwardkim/rhwp/issues/1267), [#1289](https://github.com/edwardkim/rhwp/issues/1289), [#1298](https://github.com/edwardkim/rhwp/issues/1298), [#1321](https://github.com/edwardkim/rhwp/issues/1321), [#1350](https://github.com/edwardkim/rhwp/issues/1350)
+- Pull Requests: [#1213](https://github.com/edwardkim/rhwp/pull/1213), [#1265](https://github.com/edwardkim/rhwp/pull/1265), [#1272](https://github.com/edwardkim/rhwp/pull/1272), [#1290](https://github.com/edwardkim/rhwp/pull/1290), [#1299](https://github.com/edwardkim/rhwp/pull/1299), [#1324](https://github.com/edwardkim/rhwp/pull/1324), [#1351](https://github.com/edwardkim/rhwp/pull/1351)
 
-### [쇼핑몰 웹사이트](https://github.com/Martinel2/SpringProject_Shoppingmall)
+## Activities
 
-- **기간 / 역할:** 2024.03 ~ 2024.09 / 개인 프로젝트
-- **기술 스택:** Spring Boot, Spring Security, MySQL
-
-- **결제 데이터 제1 정규화 및 스냅샷 아키텍처를 통한 무결성 확보**
-    - **문제:** 비정규화 구조의 한계 및 결제 시점 가격 변동으로 인한 데이터 정합성 리스크 인지
-    - **해결**
-        - 결제 시점의 가격/할인가를 스냅샷을 통해 보존
-        - 미래의 '부분 취소/배송 조회'를 위해 결제 데이터를 N개의 단건으로 분할하는     정규화 수행
-    - **결과**
-        - 도메인 정책 관점에서 SQL 에러를 해결
-        - 결제 도메인에서 가장 중요한 데이터 정합성 확보 및 확장성에 유연한 데이터베이스 구조 확립
-
-- **로그인 보안 취약점 인지 및 개선**
-    - **문제**
-        - 초기 세션 및 JS 기반의 인증 정보 처리 시 브라우저 쿠키를 통한 보안 취약점 확인
-        - 기존 블로그 레퍼런스들과 최신 Spring Security 버전 간 설정 방식 차이로 인한 호환성 에러 발생
-    - **해결** - 각 레거시 코드 라인의 역할 인지 및 공식 문서와의 교차 검증을 통한 최신 버전 설정으로 재구성
-    - **결과** - JS기반 취약한 쿠키 인증 로직 삭제 및 서버 중심 인증 로직 확보
-
-
-## Other Activities
-
-* [전시] SK Summit 2025 / 2025.11
-    * 부산대학교 대표 전시 부스 운영
-
-* [자격증] 정보처리기사 취득 / 2025.09
-
-* [전시] K-ICT Week in Busan / 2025.07
-    * 부산대학교 대표 전시 부스 운영
-
-* [동아리] 부산대학교 APPTIVE 활동 / 2025.03 ~ 2026.01
-    * Backend 멘토 역할 수행
-        * Backend 기초 지식(Rest API, DB 등) 공유 및 코드 리뷰 수행 
-        * 성과를 인정 받아 동아리 내 공로상 수상
-
-* [Velog](https://velog.io/@kkuldangi3/posts) 글 작성 / 2023.07 ~
-    * 새로 배운 것 혹은 프로젝트 일대기 작성
+- 부산대학교 APPTIVE Backend 멘토 / 2025.03 ~ 2026.01
+  - REST API, DB 등 백엔드 기초 지식 공유
+  - 코드 리뷰 수행
+  - 동아리 내 공로상 수상
+- SK Summit 2025 부산대학교 대표 전시 부스 운영 / 2025.11
+- K-ICT Week in Busan 부산대학교 대표 전시 부스 운영 / 2025.07
+- 정보처리기사 취득 / 2025.09
 
 ## 🏆 Awards
-* 부산대학교 정보컴퓨터공학부 졸업과제 SW/AI 분과 / 금상 / 2025.10.01 / 부산대학교 정보컴퓨터공학부
-* AI커리어스쿨 창업톤(L:AUNCH) / 장려상 / 2025.09.28 / Root Impact
+* 부산대학교 정보컴퓨터공학부 졸업과제 SW/AI 분과 / 금상 / 2025.10.01 / 부산대학교 의생명공학대학
+* AI커리어스쿨 창업톤(L:AUNCH) / 장려상 / 2025.09.28 / Root Impact x Google.org
 * 부산 DATA WEEK - 데이터 활용 우수사례 공모전 / 최우수상 / 2025.09.23 / 부산테크노파크
 * 2025 SW 중심대학 디지털 경진대회 SW부문/ 후원기업상(딥노이드) / 2025.08.12 / SW중심대학협의회
 
