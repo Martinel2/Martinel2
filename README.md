@@ -29,7 +29,7 @@ AI의 판단을 권한·멱등성·상태 전이 같은 백엔드 규칙 안에�
 ### Fruition — LLM Wiki에서 착안한 문서 생성·정리 업무를 돕고 지식을 쌓아주는 AI Agent 워크스페이스
 
 - Team Project
-- Period / Role: 2026.04 ~ / AI 워크플로 설계 및 통합
+- Period / Role: 2026.05 ~ / AI 워크플로 설계 및 통합
 
 **Service Boundary Design**
 
