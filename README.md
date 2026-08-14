@@ -112,7 +112,13 @@ Rust 기반 HWP/HWPX 라이브러리에서 이슈 분석, 수정 계획, PR 작�
 - 기존 코드와 테스트를 추적해 HWP/HWPX 라이브러리 이슈 7건을 재현 및 분석하고 [PR 7건](https://github.com/edwardkim/rhwp/pulls?q=is%3Apr+author%3AMartinel2) 기여
 
 ## Activities
-
+- 기술 컨퍼런스 참관 · 2026.08
+  - [Open Source Summit Korea](https://events.linuxfoundation.org/open-source-summit-korea/) · 2026.08.11 ~ 08.12
+  - [MCP Dev Summit Seoul](https://events.linuxfoundation.org/mcp-dev-summit-seoul/) · 2026.08.13 ~ 08.14
+- AWS Skill Builder·AWS Training 과정 이수 · 2026.06 ~ 2026.07
+  - AWS Cloud Practitioner Essentials
+  - Machine Learning Engineering on AWS (3일)
+  - Developing Generative AI Applications on AWS (2일)
 - 부산대학교 APPTIVE Backend Mentor · 2025.03 ~ 2026.01
   - 멘티 12명을 대상으로 REST API·DB 교육 6회와 코드 리뷰를 진행했습니다.
   - 전체 멘토링 완주율 94%를 달성하고 공로상을 수상했습니다.
