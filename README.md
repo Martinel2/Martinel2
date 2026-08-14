@@ -8,46 +8,74 @@ Jae Hyeong Kim, Backend Developer
 
 ## About
 
-저는 시스템을 안정화하고 이를 기록하려 노력하는 개발자입니다!
+Java와 Spring 기반의 백엔드 시스템을 설계하고, 검색 성능과 데이터 정합성을 개선해 왔습니다.
+AI의 판단을 권한·멱등성·상태 전이 같은 백엔드 규칙 안에서 안전하게 연결하는 일에 관심이 있습니다.
 
-- 1GB 규모의 약품 데이터를 전처리하고 문장 블록화, 정규표현식, GPT Batch API를 적용해 LLM 변환 비용을 약 `$200`에서 `$11.18`로 줄였습니다.
-- Elasticsearch와 Redis를 함께 사용해 약품 검색 응답 시간을 로컬 기준 최대 `5~7초`에서 `0.8ms` 수준으로 개선했습니다.
-- AI가 할 일과 코드가 보장할 일을 분리해, LLM/RAG 기능을 검증 가능한 백엔드 구조 안에 배치하는 데 관심이 있습니다.
+- Elasticsearch와 Redis를 활용해 로컬 캐시 히트 경로의 검색 응답을 최대 5~7초에서 평균 0.8ms 수준으로 개선했습니다.
+- 1GB 약품 데이터를 전처리하고 GPT Batch API를 적용해 예상 LLM 변환 비용을 약 $200에서 실제 $11.18로 줄였습니다.
+- Kafka와 transactional outbox를 활용해 장시간 AI 작업을 비동기화하고, 중복·역전된 결과가 최신 상태를 덮어쓰지 않도록 설계했습니다.
 
+## Core Skills
 
-## ⚙ Tech Stack 
-
-### Backend
-
-`Spring Boot` `Spring Security` `JUnit5` `Spring AI`
-
-### Database / Search / Cache
-
-`MySQL` `Elasticsearch` `Redis` `Milvus` `Weaviate`
-
-### DevOps / Infra
-
-`AWS EC2` `Azure` `Docker` `Docker Compose` `GitHub Actions` `Nginx`
-
-### AI / Automation
-
-`OpenAI API` `GPT Batch API` `RAG` `Vector DB` `Firebase Cloud Messaging`
+- Primary: Java
+- Backend: Spring Boot, REST API, Spring Security, JUnit 5
+- Data & Messaging: PostgreSQL, MySQL, Redis, Elasticsearch, Kafka
+- Infra: Docker, Docker Compose, AWS EC2, GitHub Actions
+- Project Technologies: Python, FastAPI, Spring AI, RAG, OpenAI API, Vector DB
 
 
 ## Projects
+
+### Fruition — LLM Wiki에서 착안한 문서 생성·정리 업무를 돕고 지식을 쌓아주는 AI Agent 워크스페이스
+
+- Team Project
+- Period / Role: 2026.04 ~ / AI 워크플로 설계 및 통합
+
+**Service Boundary Design**
+
+- Problem: 인증·문서·AI 기능이 하나의 서비스와 데이터베이스에 결합되면 변경 범위가 커지고, 장시간 AI 작업의 장애가 핵심 문서 기능으로 전파될 수 있었습니다.
+- Solution:
+  - 데이터 소유권과 장애 경계를 기준으로 인증·문서·AI 서비스를 독립 배포 단위로 분리했습니다.
+  - 서비스 간 직접 DB 참조를 제거하고 내부 API와 Redis projection으로 필요한 데이터만 전달했습니다.
+- Result: 서비스별 데이터 소유권과 책임을 명확히 하고, AI 서비스의 지연이나 장애가 문서 서비스로 직접 전파되지 않는 구조를 만들었습니다.
+
+**Asynchronous AI Workflow**
+
+- Problem: 장시간 AI 작업을 동기 요청으로 처리하면 응답 시간이 길어지고, 재시도 과정에서 중복 실행이나 오래된 결과의 역전 반영이 발생할 수 있었습니다.
+- Solution:
+  - Kafka command/event와 transactional outbox를 적용해 AI 작업을 비동기화했습니다.
+  - `document_id`를 메시지 키로 사용해 동일 문서의 처리 순서를 보존하고 서로 다른 문서는 병렬 처리했습니다.
+  - receipt·revision·unique constraint를 조합해 at-least-once 전달의 중복과 오래된 결과를 차단했습니다.
+- Result: AI worker 중지, 재개 후 backlog가 모두 소비되고 consumer lag가 0으로 복구되는 것을 통합 테스트로 검증했습니다.
+
+**AI Editing Safety**
+
+- Problem: 확률적인 LLM 결과를 문서에 바로 적용하면 잘못된 수정이나 권한을 벗어난 변경을 통제하기 어려웠습니다.
+- Solution:
+  - LLM은 의미 판단, 근거 선별을 담당하고, 코드가 권한, 보안 규칙, 상태 전이, 최종 적용을 검증하도록 책임을 분리했습니다.
+  - AI 편집을 preview → diff → apply 단계로 나누고 최종 적용 전 사용자가 변경 내용을 확인하도록 구성했습니다.
+- Result: LLM이 문서를 직접 변경하지 못하게 하고, 검증 가능한 변경안과 사용자 승인 절차 안에서만 결과가 반영되도록 했습니다.
+
+
 ### [Pilltip: 개인맞춤 AI 의약관리 애플리케이션](https://github.com/PillTipKR/Pilltip)
 
+- Team Project
 - Period / Role: 2025.03 ~ 2025.12 / Backend/AI Developer
 - Stack: Spring Boot, MySQL, Weaviate, Elasticsearch, Redis, Docker Compose, Spring AI, GPT Batch API, FCM
 
 **Search Performance Optimization**
 
-- Problem: `LIKE %keyword%` 검색과 사용자 맞춤 DUR 판단을 위한 다중 JOIN으로 로컬 Postman 기준 5~7초 이상의 응답 지연이 발생했습니다.
+- Problem:
+    - `LIKE '%keyword%'` 검색과 사용자 맞춤 DUR 판단을 위한 다중 JOIN으로 인해 로컬 Postman 측정 기준 최대 5~7초의 응답 지연이 발생했습니다.
+
 - Solution:
-  - RDBMS 데이터를 Elasticsearch로 이관하는 `DataSync` 파이프라인을 구축했습니다.
-  - Provider 패턴과 Initializer를 사용해 N-gram, Edge N-gram 기반 인덱스 매핑과 생명주기를 애플리케이션에서 제어했습니다.
-  - DUR 태깅 결과를 Redis에 `{type}:DUR:{DUR_type}:{drugId}` 형태로 캐싱해 검색 결과 반환 시 O(1)에 가깝게 태깅되도록 설계했습니다.
-- Result: DB 커넥션 병목을 줄이고 검색 응답 시간을 최대 7초 수준에서 0.8ms 수준으로 단축했습니다.
+    - RDBMS의 약품 데이터를 Elasticsearch로 동기화하는 `DataSync` 파이프라인을 구축했습니다.
+    - Provider 패턴과 Initializer를 적용해 N-gram·Edge N-gram 기반 인덱스 매핑과 생명주기를 애플리케이션에서 관리했습니다.
+    - DUR 판정 결과를 Redis에 `{type}:DUR:{durType}:{drugId}` 형식으로 캐싱해 검색 결과 반환 시 반복적인 DB JOIN 없이 태깅할 수 있도록 설계했습니다.
+
+- Result:
+    - 검색 경로에서 다중 JOIN과 반복적인 DUR 조회를 제거했습니다.
+    - 로컬 Postman 측정 기준, 캐시 히트 경로의 평균 응답 시간을 최대 5~7초에서 약 0.8ms 수준으로 단축했습니다.
 
 **LLM Cost Optimization**
 
@@ -68,19 +96,17 @@ Jae Hyeong Kim, Backend Developer
 ## Open Source Contribution
 
 ### [Rhwp](https://github.com/edwardkim/rhwp)
-- Period: 2025.04 ~ 
+- Period: 2025.04 ~ 2025.06
 
 Rust 기반 HWP/HWPX 라이브러리에서 이슈 분석, 수정 계획, PR 작성, 테스트와 CI 대응을 수행했습니다.
 
-- Issues: [#1188](https://github.com/edwardkim/rhwp/issues/1188), [#1244](https://github.com/edwardkim/rhwp/issues/1244), [#1267](https://github.com/edwardkim/rhwp/issues/1267), [#1289](https://github.com/edwardkim/rhwp/issues/1289), [#1298](https://github.com/edwardkim/rhwp/issues/1298), [#1321](https://github.com/edwardkim/rhwp/issues/1321), [#1350](https://github.com/edwardkim/rhwp/issues/1350)
-- Pull Requests: [#1213](https://github.com/edwardkim/rhwp/pull/1213), [#1265](https://github.com/edwardkim/rhwp/pull/1265), [#1272](https://github.com/edwardkim/rhwp/pull/1272), [#1290](https://github.com/edwardkim/rhwp/pull/1290), [#1299](https://github.com/edwardkim/rhwp/pull/1299), [#1324](https://github.com/edwardkim/rhwp/pull/1324), [#1351](https://github.com/edwardkim/rhwp/pull/1351)
+- 기존 코드와 테스트를 추적해 HWP/HWPX 라이브러리 이슈 7건을 재현 및 분석하고 [PR 7건](https://github.com/edwardkim/rhwp/pulls?q=is%3Apr+author%3AMartinel2) 기여
 
 ## Activities
 
-- 부산대학교 APPTIVE Backend 멘토 / 2025.03 ~ 2026.01
-  - REST API, DB 등 백엔드 기초 지식 공유
-  - 코드 리뷰 수행
-  - 동아리 내 공로상 수상
+- 부산대학교 APPTIVE Backend Mentor · 2025.03 ~ 2026.01
+  - 멘티 12명을 대상으로 REST API·DB 교육 6회와 코드 리뷰를 진행했습니다.
+  - 전체 멘토링 완주율 94%를 달성하고 공로상을 수상했습니다.
 - SK Summit 2025 부산대학교 대표 전시 부스 운영 / 2025.11
 - K-ICT Week in Busan 부산대학교 대표 전시 부스 운영 / 2025.07
 - 정보처리기사 취득 / 2025.09
