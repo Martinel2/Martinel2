@@ -2,9 +2,9 @@ Jae Hyeong Kim, Backend Developer
 ---
 
 ## 📞 Contacts
-- Email: kkuldangi3@naver.com
-- GitHub: [github.com/Martinel2](https://github.com/Martinel2)
-- Velog: [velog.io/@kkuldangi3](https://velog.io/@kkuldangi3/posts)
+- Email: kkuldangi2@gmail.com
+- LinkedIn: [LinkedIn/김재형](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
+- Velog: [velog.io/@KJH](https://velog.io/@kkuldangi3/posts)
 
 ## About
 
