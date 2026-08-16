@@ -108,16 +108,13 @@ AI의 판단을 권한·멱등성·상태 전이 같은 백엔드 규칙 안에�
 ## Open Source Contribution
 
 ### [Rhwp](https://github.com/edwardkim/rhwp)
-- Period: 2025.04 ~ 2025.06
+- Period: 2026.04 ~ 2026.06
 
 Rust 기반 HWP/HWPX 라이브러리에서 이슈 분석, 수정 계획, PR 작성, 테스트와 CI 대응을 수행했습니다.
 
 - 기존 코드와 테스트를 추적해 HWP/HWPX 라이브러리 이슈 7건을 재현 및 분석하고 [PR 7건](https://github.com/edwardkim/rhwp/pulls?q=is%3Apr+author%3AMartinel2) 기여
 
 ## Activities
-- 기술 컨퍼런스 참관 · 2026.08
-  - [Open Source Summit Korea](https://events.linuxfoundation.org/open-source-summit-korea/) · 2026.08.11 ~ 08.12
-  - [MCP Dev Summit Seoul](https://events.linuxfoundation.org/mcp-dev-summit-seoul/) · 2026.08.13 ~ 08.14
 - AWS Skill Builder·AWS Training 과정 이수 · 2026.06 ~ 2026.07
   - AWS Cloud Practitioner Essentials
   - Machine Learning Engineering on AWS (3일)
@@ -126,8 +123,8 @@ Rust 기반 HWP/HWPX 라이브러리에서 이슈 분석, 수정 계획, PR 작�
   - 멘티 12명을 대상으로 REST API·DB 교육 6회와 코드 리뷰를 진행했습니다.
   - 전체 멘토링 완주율 94%를 달성하고 공로상을 수상했습니다.
 - SK Summit 2025 부산대학교 대표 전시 부스 운영 / 2025.11
-- K-ICT Week in Busan 부산대학교 대표 전시 부스 운영 / 2025.07
 - 정보처리기사 취득 / 2025.09
+- K-ICT Week in Busan 부산대학교 대표 전시 부스 운영 / 2025.07
 
 ## 🏆 Awards
 * 부산대학교 정보컴퓨터공학부 졸업과제 SW/AI 분과 / 금상 / 2025.10.01 / 부산대학교 의생명공학대학
