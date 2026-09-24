@@ -24,7 +24,7 @@
 
 ### Fruition | 문서를 지식으로 쌓고 활용하는 AI 워크스페이스
 
-[Github](https://github.com/FruitionKR/local-pilot) · [Github AI 분리 저장소](https://github.com/FruitionKR/Fruition-ai)
+[Github](https://github.com/FruitionKR/local-pilot) · [Github AI 분리 저장소](https://github.com/FruitionKR/Fruition-ai)  [상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
 
 2026.04 — 현재 · AI SW 마에스트로 17기 · **AI 기능 전체 리드**
 
@@ -36,7 +36,6 @@
 - **사용자 정의 작업:** 자연어로 반복 작업 지침(Skill)을 작성·검토·게시하고, 문서 변경을 미리 확인한 뒤 승인하는 흐름 구현.
 - **문서 편집 품질:** 편집 목적 전달과 재시도 입력, 의미 평가 후 재작성을 개선해 동일 초안 114개의 내부 평가 통과 94 → 104건.
 
-[상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
 
 ### Pilltip | 개인 맞춤 AI 복약 관리 서비스
 
