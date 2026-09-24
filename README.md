@@ -24,7 +24,7 @@
 
 ### Fruition | 문서를 지식으로 쌓고 활용하는 AI 워크스페이스
 
-[Github](https://github.com/FruitionKR/local-pilot) · [Github AI 분리 저장소](https://github.com/FruitionKR/Fruition-ai)  [상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
+[Github](https://github.com/FruitionKR/local-pilot) · [Github AI 분리 저장소](https://github.com/FruitionKR/Fruition-ai) · [상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
 
 2026.04 — 현재 · AI SW 마에스트로 17기 · **AI 기능 전체 리드**
 
@@ -39,7 +39,7 @@
 
 ### Pilltip | 개인 맞춤 AI 복약 관리 서비스
 
-[GitHub](https://github.com/PillTipKR/Pilltip) 
+[GitHub](https://github.com/PillTipKR/Pilltip) · [데이터 정제 경험](https://martinel2.github.io/portfolio.html#pilltip-data) · [복약 챗봇 설계](https://martinel2.github.io/portfolio.html#pilltip-personalization)
 
 2025.03 — 2025.12 · 부산대학교 · **Backend / AI 응용 개발**
 
@@ -49,8 +49,6 @@
 - FCM을 활용한 복약 알림·복약 로그, 딥링크 기반 친구 초대, 가족 프로필 전환 기능 구현.
 - **의약품 데이터 정제·변환:** 약 4만 4천 건의 원문을 쉬운 설명으로 변환. 문장 중복 제거와 성분별 누락 보완, Batch API를 적용해 변환 대상을 1GB → 326MB로 축소.
 - **개인화 복약 챗봇:** 증상과 약품 효능을 의미 검색으로 연결하고, 약품 탐색·복약 위험·섭취량별 처리 경로 구현. 임신 여부·복용약·기저질환은 외부 LLM 입력에서 제외하고 내부 코드로 판단.
-
-[데이터 정제 경험](https://martinel2.github.io/portfolio.html#pilltip-data) · [복약 챗봇 설계](https://martinel2.github.io/portfolio.html#pilltip-personalization)
 
 ### 개인 프로젝트
 
