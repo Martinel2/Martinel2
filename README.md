@@ -14,23 +14,30 @@
 - **[RAG 근거 충족률 66.25% → 91.25% 개선](https://martinel2.github.io/portfolio.html#fruition-jev-evidence)** — 답이 있는 80문항에서 필요한 근거를 충족한 질문 53 → 73건. Jev 도입 후 후보 수와 병렬 처리를 조정해 시간 중앙값 9.090초 → 2.251초로 단축했습니다.
 - **[약품 설명 변환: 예상 $200 대비 실제 $11.18](https://martinel2.github.io/portfolio.html#pilltip-data)** — 완전 일치·의미 중복 제거, 누락된 성분별 주의사항 보완, GPT Batch API 변환을 연결했습니다. 비용은 전체 원문 변환 예상치와 실제 API 지출의 비교입니다.
 
+## 기술
+
+- **Backend:** Java · Spring Boot · Spring AI · Python
+- **AI / Search:** LangChain · LangGraph · RAG · LLM Evaluation · Jev / Elasticsearch · Weaviate · BGE-M3 · BM25
+- **Data / Infra:** MySQL · PostgreSQL · Redis · Kafka / Docker · Docker Compose · GitHub Actions
+
 ## 프로젝트
 
 ### Fruition | 문서를 지식으로 쌓고 활용하는 AI 워크스페이스
-
+[Github](https://github.com/FruitionKR/local-pilot) · [Github AI 분리 저장소](https://github.com/FruitionKR/Fruition-ai) 
 2026.04 — 현재 · AI SW 마에스트로 17기 · **AI 기능 전체 리드**
 
 프론트엔드·백엔드 개발은 팀원 담당. MSA의 초기 설계를 제안하고 팀원·멘토와 논의해 최종 구조를 함께 완성했습니다.
+
 
 - **문서 변환과 분석:** 본문을 추출·복원하고 표·수식·그림을 보존하는 PDF 변환 파이프라인 구현. 문서별 병렬 처리로 문서 4개 분석 시간 282.11초 → 73.89초, 약 74% 단축.
 - **답변 근거 검색:** 검색으로 후보를 모으고 선택형 판단 모델 Jev로 근거를 고르는 구조를 적용. 동일 후보·반환 조건으로 비교한 뒤 정확도와 처리 시간을 함께 개선.
 - **사용자 정의 작업:** 자연어로 반복 작업 지침(Skill)을 작성·검토·게시하고, 문서 변경을 미리 확인한 뒤 승인하는 흐름 구현.
 - **문서 편집 품질:** 편집 목적 전달과 재시도 입력, 의미 평가 후 재작성을 개선해 동일 초안 114개의 내부 평가 통과 94 → 104건.
 
-[local-pilot](https://github.com/FruitionKR/local-pilot) · [AI 분리 저장소](https://github.com/FruitionKR/Fruition-ai) · [상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
+[상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
 
 ### Pilltip | 개인 맞춤 AI 복약 관리 서비스
-
+[GitHub](https://github.com/PillTipKR/Pilltip) 
 2025.03 — 2025.12 · 부산대학교 · **Backend / AI 응용 개발**
 
 팀원 담당: Android 전반과 문진표 기능, 사용자 DB 모델링, 로그인 등 사용자 관련 기능과 AES-GCM 등 보안 구현. 아래 목록은 제가 구현한 기능입니다.
@@ -40,7 +47,7 @@
 - **의약품 데이터 정제·변환:** 약 4만 4천 건의 원문을 쉬운 설명으로 변환. 문장 중복 제거와 성분별 누락 보완, Batch API를 적용해 변환 대상을 1GB → 326MB로 축소.
 - **개인화 복약 챗봇:** 증상과 약품 효능을 의미 검색으로 연결하고, 약품 탐색·복약 위험·섭취량별 처리 경로 구현. 임신 여부·복용약·기저질환은 외부 LLM 입력에서 제외하고 내부 코드로 판단.
 
-[GitHub](https://github.com/PillTipKR/Pilltip) · [데이터 정제 경험](https://martinel2.github.io/portfolio.html#pilltip-data) · [복약 챗봇 설계](https://martinel2.github.io/portfolio.html#pilltip-personalization)
+[데이터 정제 경험](https://martinel2.github.io/portfolio.html#pilltip-data) · [복약 챗봇 설계](https://martinel2.github.io/portfolio.html#pilltip-personalization)
 
 ### 개인 프로젝트
 
@@ -52,12 +59,6 @@
 **[Rhwp](https://github.com/edwardkim/rhwp)** — Rust 기반 HWP/HWPX 프로젝트의 오류 분석, 수정안 제출과 CI 대응. 그림·표·도형의 textFlow 속성이 저장 후 초기화되는 오류를 수정했습니다.
 
 [PR #1213 · 병합](https://github.com/edwardkim/rhwp/pull/1213) · [PR #1351](https://github.com/edwardkim/rhwp/pull/1351) · [전체 기여](https://github.com/edwardkim/rhwp/pulls?q=is%3Apr+author%3AMartinel2)
-
-## 기술
-
-- **Backend:** Java · Spring Boot · Spring AI · Python
-- **AI / Search:** LangChain · LangGraph · RAG · LLM Evaluation · Jev / Elasticsearch · Weaviate · BGE-M3 · BM25
-- **Data / Infra:** MySQL · PostgreSQL · Redis · Kafka / Docker · Docker Compose · GitHub Actions
 
 ## 활동
 
