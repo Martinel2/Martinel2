@@ -4,7 +4,7 @@
 
 가설을 실험으로 확인하고, 결과가 달라진 원인을 찾아 다음 개선으로 연결합니다. AI의 정확도와 비용, 처리 시간을 함께 살피며 서비스에 맞는 구현을 선택합니다.
 
-[소개](https://martinel2.github.io/) · [상세 포트폴리오](https://martinel2.github.io/portfolio.html) · [이력서 PDF](https://martinel2.github.io/resume.pdf) · [블로그](https://velog.io/@kkuldangi3/posts) · [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
+[소개](https://martinel2.github.io/) · [블로그](https://velog.io/@kkuldangi3/posts) · [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
 
 **Email**: kkuldangi2@gmail.com
 
