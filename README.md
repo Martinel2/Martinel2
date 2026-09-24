@@ -1,149 +1,88 @@
-Jae Hyeong Kim, Backend Developer
----
+# 김재형 | Backend & AI Application Developer
 
-## 📞 Contacts
-- Email: kkuldangi2@gmail.com
-- LinkedIn: [LinkedIn/김재형](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
-- Velog: [velog.io/@KJH](https://velog.io/@kkuldangi3/posts)
+실패의 원인을 깊이 파고들어 해결하는 것을 좋아하는 개발자
 
-## About
+가설을 실험으로 확인하고, 결과가 달라진 원인을 찾아 다음 개선으로 연결합니다. AI의 정확도와 비용, 처리 시간을 함께 살피며 서비스에 맞는 구현을 선택합니다.
 
-Java와 Spring 기반의 백엔드 시스템을 설계하고, 검색 성능과 데이터 정합성을 개선해 왔습니다.
-AI의 판단을 권한·멱등성·상태 전이 같은 백엔드 규칙 안에서 안전하게 연결하는 일에 관심이 있습니다.
+[소개](https://martinel2.github.io/) · [상세 포트폴리오](https://martinel2.github.io/portfolio.html) · [이력서 PDF](https://martinel2.github.io/resume.pdf) · [블로그](https://velog.io/@kkuldangi3/posts) · [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
 
-- Elasticsearch와 Redis를 활용해 로컬 캐시 히트 경로의 검색 응답을 최대 5~7초에서 평균 0.8초 수준으로 개선했습니다.
-- 1GB 약품 데이터를 전처리하고 GPT Batch API를 적용해 예상 LLM 변환 비용을 약 $200에서 실제 $11.18로 줄였습니다.
-- Kafka와 transactional outbox를 활용해 장시간 AI 작업을 비동기화하고, 중복·역전된 결과가 최신 상태를 덮어쓰지 않도록 설계했습니다.
+**Email**: kkuldangi2@gmail.com
 
-## Core Skills
+## 주요 경험
 
-- Primary: Java
-- Backend: Spring Boot, REST API, Spring Security, JUnit 5
-- Data & Messaging: PostgreSQL, MySQL, Redis, Elasticsearch, Kafka
-- Infra: Docker, Docker Compose, AWS EC2, GitHub Actions
-- Project Technologies: Python, FastAPI, Spring AI, RAG, OpenAI API, Vector DB
+- **[PDF 변환 통과율 45.17% → 89.89% 개선](https://martinel2.github.io/portfolio.html#fruition-document)** — PDF 30쪽의 내부 평가 결과. 본문과 표·수식의 처리 경로를 나누고, 필요한 부분만 AI로 복원했습니다.
+- **[RAG 근거 충족률 66.25% → 91.25% 개선](https://martinel2.github.io/portfolio.html#fruition-jev-evidence)** — 답이 있는 80문항에서 필요한 근거를 충족한 질문 53 → 73건. Jev 도입 후 후보 수와 병렬 처리를 조정해 시간 중앙값 9.090초 → 2.251초로 단축했습니다.
+- **[약품 설명 변환: 예상 $200 대비 실제 $11.18](https://martinel2.github.io/portfolio.html#pilltip-data)** — 완전 일치·의미 중복 제거, 누락된 성분별 주의사항 보완, GPT Batch API 변환을 연결했습니다. 비용은 전체 원문 변환 예상치와 실제 API 지출의 비교입니다.
 
+## 프로젝트
 
-## Projects
+### Fruition | 문서를 지식으로 쌓고 활용하는 AI 워크스페이스
 
-### Fruition — LLM Wiki에서 착안한 문서 생성·정리 업무를 돕고 지식을 쌓아주는 AI Agent 워크스페이스
+2026.04 — 현재 · AI SW 마에스트로 17기 · **AI 기능 전체 리드**
 
-- Team Project
-- Period / Role: 2026.05 ~ / AI 워크플로 설계 및 통합
+프론트엔드·백엔드 개발은 팀원 담당. MSA의 초기 설계를 제안하고 팀원·멘토와 논의해 최종 구조를 함께 완성했습니다.
 
-**Service Boundary Design**
+- **문서 변환과 분석:** 본문을 추출·복원하고 표·수식·그림을 보존하는 PDF 변환 파이프라인 구현. 문서별 병렬 처리로 문서 4개 분석 시간 282.11초 → 73.89초, 약 74% 단축.
+- **답변 근거 검색:** 검색으로 후보를 모으고 선택형 판단 모델 Jev로 근거를 고르는 구조를 적용. 동일 후보·반환 조건으로 비교한 뒤 정확도와 처리 시간을 함께 개선.
+- **사용자 정의 작업:** 자연어로 반복 작업 지침(Skill)을 작성·검토·게시하고, 문서 변경을 미리 확인한 뒤 승인하는 흐름 구현.
+- **문서 편집 품질:** 편집 목적 전달과 재시도 입력, 의미 평가 후 재작성을 개선해 동일 초안 114개의 내부 평가 통과 94 → 104건.
 
-- Problem: 인증·문서·AI 기능이 하나의 서비스와 데이터베이스에 결합되면 변경 범위가 커지고, 장시간 AI 작업의 장애가 핵심 문서 기능으로 전파될 수 있었습니다.
-- Solution:
-  - 데이터 소유권과 장애 경계를 기준으로 인증·문서·AI 서비스를 독립 배포 단위로 분리했습니다.
-  - 서비스 간 직접 DB 참조를 제거하고 내부 API와 Redis projection으로 필요한 데이터만 전달했습니다.
-- Result: 서비스별 데이터 소유권과 책임을 명확히 하고, AI 서비스의 지연이나 장애가 문서 서비스로 직접 전파되지 않는 구조를 만들었습니다.
+[local-pilot](https://github.com/FruitionKR/local-pilot) · [AI 분리 저장소](https://github.com/FruitionKR/Fruition-ai) · [상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
 
-**Asynchronous AI Workflow**
+### Pilltip | 개인 맞춤 AI 복약 관리 서비스
 
-- Problem: 장시간 AI 작업을 동기 요청으로 처리하면 응답 시간이 길어지고, 재시도 과정에서 중복 실행이나 오래된 결과의 역전 반영이 발생할 수 있었습니다.
-- Solution:
-  - Kafka command/event와 transactional outbox를 적용해 AI 작업을 비동기화했습니다.
-  - `document_id`를 메시지 키로 사용해 동일 문서의 처리 순서를 보존하고 서로 다른 문서는 병렬 처리했습니다.
-  - receipt·revision·unique constraint를 조합해 at-least-once 전달의 중복과 오래된 결과를 차단했습니다.
-- Result: AI worker 중지, 재개 후 backlog가 모두 소비되고 consumer lag가 0으로 복구되는 것을 통합 테스트로 검증했습니다.
+2025.03 — 2025.12 · 부산대학교 · **Backend / AI 응용 개발**
 
-**Evidence-Grounded Search and Answer Validation**
+팀원 담당: Android 전반과 문진표 기능, 사용자 DB 모델링, 로그인 등 사용자 관련 기능과 AES-GCM 등 보안 구현. 아래 목록은 제가 구현한 기능입니다.
 
-- Problem:
-  - 사용자가 파일명을 정확히 기억하지 못해도 질문이나 개념만으로 관련 문서를 찾아야 했습니다.
-  - LLM이 생성한 답변이 실제 업로드 문서의 어느 내용에 근거하는지도 확인할 수 있어야 했습니다.
+- Java·Spring Boot 기반 의약품 DB 설계, 의약품 검색·자동완성과 복약 위험정보(DUR) 표출 구현.
+- FCM을 활용한 복약 알림·복약 로그, 딥링크 기반 친구 초대, 가족 프로필 전환 기능 구현.
+- **의약품 데이터 정제·변환:** 약 4만 4천 건의 원문을 쉬운 설명으로 변환. 문장 중복 제거와 성분별 누락 보완, Batch API를 적용해 변환 대상을 1GB → 326MB로 축소.
+- **개인화 복약 챗봇:** 증상과 약품 효능을 의미 검색으로 연결하고, 약품 탐색·복약 위험·섭취량별 처리 경로 구현. 임신 여부·복용약·기저질환은 외부 LLM 입력에서 제외하고 내부 코드로 판단.
 
-- Solution:
-  - 업로드 문서를 문서별 요약·근거 페이지와 여러 문서의 공통 개념을 통합한 지식 페이지로 구조화하고, 관련이 있으면 연결하도록 했습니다.
-  - BM25와 Embedding 점수를 결합해 질문과 관련된 문서 및 지식 페이지의 순위를 계산했습니다.
-  - 검색 결과에서 원본 문서의 근거 문단까지 추적해 답변과 함께 제시하도록 구성했습니다.
-  - evaluator가 질문과 근거, 답변의 정합성을 검사하고 기준을 통과하지 못하면 피드백을 반영해 다시 생성하도록 설계했습니다.
+[GitHub](https://github.com/PillTipKR/Pilltip) · [데이터 정제 경험](https://martinel2.github.io/portfolio.html#pilltip-data) · [복약 챗봇 설계](https://martinel2.github.io/portfolio.html#pilltip-personalization)
 
-- Result:
-  - 파일명을 몰라도 개념이나 자연어 질문으로 관련 정보를 탐색할 수 있게 했습니다.
-  - 답변과 함께 사용된 원본 문서와 근거 문단을 확인할 수 있도록 했습니다.
-  - 근거가 부족한 답변은 제한된 횟수 안에서 재생성하는 검증 흐름을 구축했습니다.
+### 개인 프로젝트
 
+- [쇼핑몰](https://github.com/Martinel2/SpringProject_Shoppingmall): Java·Spring 기반 쇼핑몰과 로그인 기능 구현
+- [Todo 웹](https://github.com/Martinel2/Project_Todo): OAuth 연동과 CI/CD 구축 경험
 
-### [Pilltip: 개인맞춤 AI 의약관리 애플리케이션](https://github.com/PillTipKR/Pilltip)
+## 오픈소스 기여
 
-- Team Project
-- Period / Role: 2025.03 ~ 2025.12 / Backend/AI Developer
-- Stack: Spring Boot, MySQL, Weaviate, Elasticsearch, Redis, Docker Compose, Spring AI, GPT Batch API, FCM
+**[Rhwp](https://github.com/edwardkim/rhwp)** — Rust 기반 HWP/HWPX 프로젝트의 오류 분석, 수정안 제출과 CI 대응. 그림·표·도형의 textFlow 속성이 저장 후 초기화되는 오류를 수정했습니다.
 
-**Search Performance Optimization**
+[PR #1213 · 병합](https://github.com/edwardkim/rhwp/pull/1213) · [PR #1351](https://github.com/edwardkim/rhwp/pull/1351) · [전체 기여](https://github.com/edwardkim/rhwp/pulls?q=is%3Apr+author%3AMartinel2)
 
-- Problem:
-    - `LIKE '%keyword%'` 검색과 사용자 맞춤 DUR 판단을 위한 다중 JOIN으로 인해 로컬 Postman 측정 기준 최대 5~7초의 응답 지연이 발생했습니다.
+## 기술
 
-- Solution:
-    - RDBMS의 약품 데이터를 Elasticsearch로 동기화하는 `DataSync` 파이프라인을 구축했습니다.
-    - Provider 패턴과 Initializer를 적용해 N-gram·Edge N-gram 기반 인덱스 매핑과 생명주기를 애플리케이션에서 관리했습니다.
-    - DUR 판정 결과를 Redis에 `{type}:DUR:{durType}:{drugId}` 형식으로 캐싱해 검색 결과 반환 시 반복적인 DB JOIN 없이 태깅할 수 있도록 설계했습니다.
+- **Backend:** Java · Spring Boot · Spring AI · Python
+- **AI / Search:** LangChain · LangGraph · RAG · LLM Evaluation · Jev / Elasticsearch · Weaviate · BGE-M3 · BM25
+- **Data / Infra:** MySQL · PostgreSQL · Redis · Kafka / Docker · Docker Compose · GitHub Actions
 
-- Result:
-    - 검색 경로에서 다중 JOIN과 반복적인 DUR 조회를 제거했습니다.
-    - 로컬 Postman 측정 기준, 캐시 히트 경로의 평균 응답 시간을 최대 5~7초에서 약 0.8초 수준으로 단축했습니다.
+## 활동
 
-**LLM Cost Optimization**
+- **부산대학교 APPTIVE** (2025.03 — 2026.01): Backend 멘티 및 멘토. 멘티 12명 대상 6회 멘토링과 코드 리뷰. HTTP·Servlet·REST API·DB 기초를 보강하는 커리큘럼 개편에 참여했습니다. [멘토 공로상](https://martinel2.github.io/assets/evidence/apptive-merit.jpeg)
+- **SK AI SUMMIT · K-ICT WEEK in Busan** (2025.11 / 2025.07): 부산대학교 대표 전시팀으로 Pilltip 부스를 운영하고 서비스 시연과 기술 질의응답을 진행했습니다. [현장 사진](https://martinel2.github.io/#activity-gallery)
+- **AWS 교육** (2026.06 — 2026.07): Cloud Practitioner Essentials, Machine Learning Engineering on AWS, Developing Generative AI Applications on AWS 이수
 
-- Problem: 1GB 규모의 약품 데이터 변환에 약 `$200`의 LLM 비용이 예상되었습니다.
-- Solution:
-  - 정규표현식 기반 데이터 클리닝을 수행했습니다.
-  - 문장을 block 단위로 보고 fuzzy matching과 사전 기반 어미 처리를 적용했습니다.
-  - 샘플 분석으로 약 70% 중복률을 확인하고, 팀을 설득해 1주일의 전처리 시간을 확보했습니다.
-  - GPT Batch API를 적용해 비실시간 대량 변환 비용을 추가 절감했습니다.
-- Result: 변환 대상 데이터를 `1GB -> 326MB`로 줄이고, 비용을 `$200 -> $11.18`로 낮췄습니다.
+## 수상
 
-**RAG Architecture**
+- **캡스톤디자인 금상** · 2025.10 · 소프트웨어·인공지능 분과 / 부산대학교 정보의생명공학대학 [증빙](https://martinel2.github.io/assets/evidence/capstone.pdf)
+- **부산 DATA WEEK 최우수상** · 2025.09 · 데이터 활용 우수사례 공모전 / 부산테크노파크 [증빙](https://martinel2.github.io/assets/evidence/data-week.pdf)
+- **AI LAUNCH 커리어스쿨 창업톤 장려상** · 2025.09 · KRYPTON X x Root Impact x Google.org [증빙](https://martinel2.github.io/assets/evidence/ai-launch.pdf)
+- **SW중심대학 디지털 경진대회 후원기업상** · 2025.08 · SW중심대학협의회 [증빙](https://martinel2.github.io/assets/evidence/sw-contest.pdf)
 
-- Problem: 사용자 증상과 약품 효능을 의미 기반으로 연결해야 했지만, 임신 여부·복용약·기저질환 같은 민감 정보를 외부 LLM에 전달해서는 안 됐습니다.
-- Solution:
-  - 약품 효능 정보를 Vector DB에 임베딩하고 사용자 증상과 유사도 기반으로 매핑하는 RAG 흐름을 구성했습니다.
-  - 외부 LLM에는 자연어 증상만 전달하고 민감 정보에 따른 DUR 판단은 내부 코드에서 수행하도록 책임을 분리했습니다.
-- Result: 의미 기반 약품 정보 탐색을 유지하면서 민감 정보가 외부 LLM 호출 범위를 벗어나지 않도록 제한했습니다.
+## 학력·자격
 
+- **부산대학교** · 2022.02 — 2026.02 (편입) · 평균 학점 4.12 / 4.5
+- **대구대학교** · 2019.03 — 2022.02 (중퇴) · 평균 학점 4.2 / 4.5
+- **정보처리기사** · 2025.09 · 한국산업인력공단
 
-## Open Source Contribution
+## 글
 
-### [Rhwp](https://github.com/edwardkim/rhwp)
-- Period: 2026.04 ~ 2026.06
+- [MSA 전환과 피드백](https://velog.io/@kkuldangi3/MSA-전환과-피드백)
+- [디자인 싱킹 회고](https://velog.io/@kkuldangi3/디자인-싱킹-회고)
 
-Rust 기반 HWP/HWPX 라이브러리에서 이슈 분석, 수정 계획, PR 작성, 테스트와 CI 대응을 수행했습니다.
+## 알고리즘
 
-- 기존 코드와 테스트를 추적해 HWP/HWPX 라이브러리 이슈 7건을 재현 및 분석하고 [PR 7건](https://github.com/edwardkim/rhwp/pulls?q=is%3Apr+author%3AMartinel2) 기여
-
-## Activities
-- AWS Skill Builder·AWS Training 과정 이수 · 2026.06 ~ 2026.07
-  - AWS Cloud Practitioner Essentials
-  - Machine Learning Engineering on AWS (3일)
-  - Developing Generative AI Applications on AWS (2일)
-- 부산대학교 APPTIVE Backend Mentor · 2025.03 ~ 2026.01
-  - 멘티 12명을 대상으로 REST API·DB 교육 6회와 코드 리뷰를 진행했습니다.
-  - 전체 멘토링 완주율 94%를 달성하고 공로상을 수상했습니다.
-- SK Summit 2025 부산대학교 대표 전시 부스 운영 / 2025.11
-- 정보처리기사 취득 / 2025.09
-- K-ICT Week in Busan 부산대학교 대표 전시 부스 운영 / 2025.07
-
-## 🏆 Awards
-* 부산대학교 정보컴퓨터공학부 졸업과제 SW/AI 분과 / 금상 / 2025.10.01 / 부산대학교 의생명공학대학
-* AI커리어스쿨 창업톤(L:AUNCH) / 장려상 / 2025.09.28 / Root Impact x Google.org
-* 부산 DATA WEEK - 데이터 활용 우수사례 공모전 / 최우수상 / 2025.09.23 / 부산테크노파크
-* 2025 SW 중심대학 디지털 경진대회 SW부문/ 후원기업상(딥노이드) / 2025.08.12 / SW중심대학협의회
-
-
-## 📖 Education
-### 부산대학교 학사 (2022.03 ~ 2026.02)
-- 정보컴퓨터공학
-- GPA : 4.12 / 4.5 (최우등 졸업)
-
-### 대구대학교 중퇴 (2019.03 ~ 2022.02)
-- 컴퓨터공학부
-- GPA : 4.2 / 4.5 
-
-## 💡 PS
-
-![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=kkuldangi3)
-
-
+![Solved.ac Profile](https://mazassumnida.wtf/api/v2/generate_badge?boj=kkuldangi3)
