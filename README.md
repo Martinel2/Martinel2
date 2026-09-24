@@ -23,7 +23,9 @@
 ## 프로젝트
 
 ### Fruition | 문서를 지식으로 쌓고 활용하는 AI 워크스페이스
-[Github](https://github.com/FruitionKR/local-pilot) · [Github AI 분리 저장소](https://github.com/FruitionKR/Fruition-ai) 
+
+[Github](https://github.com/FruitionKR/local-pilot) · [Github AI 분리 저장소](https://github.com/FruitionKR/Fruition-ai)
+
 2026.04 — 현재 · AI SW 마에스트로 17기 · **AI 기능 전체 리드**
 
 프론트엔드·백엔드 개발은 팀원 담당. MSA의 초기 설계를 제안하고 팀원·멘토와 논의해 최종 구조를 함께 완성했습니다.
@@ -37,7 +39,9 @@
 [상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
 
 ### Pilltip | 개인 맞춤 AI 복약 관리 서비스
+
 [GitHub](https://github.com/PillTipKR/Pilltip) 
+
 2025.03 — 2025.12 · 부산대학교 · **Backend / AI 응용 개발**
 
 팀원 담당: Android 전반과 문진표 기능, 사용자 DB 모델링, 로그인 등 사용자 관련 기능과 AES-GCM 등 보안 구현. 아래 목록은 제가 구현한 기능입니다.
