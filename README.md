@@ -69,10 +69,10 @@
 
 ## 수상
 
-- **캡스톤디자인 금상** · 2025.10 · 소프트웨어·인공지능 분과 / 부산대학교 정보의생명공학대학 [증빙](https://martinel2.github.io/assets/evidence/capstone.pdf)
-- **부산 DATA WEEK 최우수상** · 2025.09 · 데이터 활용 우수사례 공모전 / 부산테크노파크 [증빙](https://martinel2.github.io/assets/evidence/data-week.pdf)
-- **AI LAUNCH 커리어스쿨 창업톤 장려상** · 2025.09 · KRYPTON X x Root Impact x Google.org [증빙](https://martinel2.github.io/assets/evidence/ai-launch.pdf)
-- **SW중심대학 디지털 경진대회 후원기업상** · 2025.08 · SW중심대학협의회 [증빙](https://martinel2.github.io/assets/evidence/sw-contest.pdf)
+- **캡스톤디자인 금상** · 2025.10 · 소프트웨어·인공지능 분과 / 부산대학교 정보의생명공학대학
+- **부산 DATA WEEK 최우수상** · 2025.09 · 데이터 활용 우수사례 공모전 / 부산테크노파크
+- **AI LAUNCH 커리어스쿨 창업톤 장려상** · 2025.09 · KRYPTON X x Root Impact x Google.org
+- **SW중심대학 디지털 경진대회 후원기업상** · 2025.08 · SW중심대학협의회
 
 ## 학력·자격
 
