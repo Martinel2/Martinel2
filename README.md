@@ -24,7 +24,7 @@
 
 ### Fruition | 문서를 지식으로 쌓고 활용하는 AI 워크스페이스
 
-[Github](https://github.com/FruitionKR/local-pilot) · [Github AI 분리 저장소](https://github.com/FruitionKR/Fruition-ai) · [상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
+[GitHub · AI 저장소](https://github.com/FruitionKR/Fruition-ai) · [상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
 
 2026.04 — 현재 · AI SW 마에스트로 17기 · 팀 프로젝트 (3명 + 디자이너) · **AI 파트 리드**
 
