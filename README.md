@@ -17,7 +17,7 @@
 ## 기술
 
 - **Backend:** Java · Spring Boot · Spring AI · Python
-- **AI / Search:** LangChain · LangGraph · RAG · LLM Evaluation · Jev / Elasticsearch · Weaviate · BGE-M3 · BM25
+- **AI / Search:** LangChain · LangGraph · RAG · LLM Evaluation · Elasticsearch · Weaviate
 - **Data / Infra:** MySQL · PostgreSQL · Redis · Kafka / Docker · Docker Compose · GitHub Actions
 
 ## 프로젝트
