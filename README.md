@@ -4,7 +4,7 @@
 
 가설을 실험으로 확인하고, 결과가 달라진 원인을 찾아 다음 개선으로 연결합니다. AI의 정확도와 비용, 처리 시간을 함께 살피며 서비스에 맞는 구현을 선택합니다.
 
-[소개](https://martinel2.github.io/) · [블로그](https://velog.io/@kkuldangi3/posts) · [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
+[소개](https://martinel2.github.io/) · [포트폴리오](https://martinel2.github.io/portfolio.html) · [블로그](https://velog.io/@kkuldangi3/posts) · [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
 
 **Email**: kkuldangi2@gmail.com
 
@@ -26,9 +26,15 @@
 
 [Github](https://github.com/FruitionKR/local-pilot) · [Github AI 분리 저장소](https://github.com/FruitionKR/Fruition-ai) · [상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
 
-2026.04 — 현재 · AI SW 마에스트로 17기 · **AI 기능 전체 리드**
+2026.04 — 현재 · AI SW 마에스트로 17기 · 팀 프로젝트 (3명 + 디자이너) · **AI 파트 리드**
 
-프론트엔드·백엔드 개발은 팀원 담당. MSA의 초기 설계를 제안하고 팀원·멘토와 논의해 최종 구조를 함께 완성했습니다.
+- **시작 계기:** 팀원이 제기한 문서 관리의 불편함을 디자인 싱킹으로 구체화했습니다. 문서를 저장만 해 두고 정작 필요할 때 찾지 못하는 문제를 풀고자 했습니다.
+- **팀 구성:** 본인(AI 기능 전체), 백엔드 1명(Spring 백엔드 전체), 프론트엔드·DevOps 1명(프론트엔드, MSA 기반 AWS 배포), 외주 디자이너 · 멘토 3명(Gen AI 품질·평가 / 백엔드 / 마일스톤·MSA 설계·문서화)
+- MSA의 초기 설계를 제안하고 팀원·멘토와 논의해 최종 구조를 함께 완성했습니다.
+
+<img src="https://martinel2.github.io/assets/projects/fruition-system-architecture.jpg" alt="Fruition 시스템 아키텍처" width="720">
+
+**주요 개발**
 
 
 - **문서 변환과 분석:** 본문을 추출·복원하고 표·수식·그림을 보존하는 PDF 변환 파이프라인 구현. 문서별 병렬 처리로 문서 4개 분석 시간 282.11초 → 73.89초, 약 74% 단축.
@@ -41,11 +47,14 @@
 
 [GitHub](https://github.com/PillTipKR/Pilltip) · [데이터 정제 경험](https://martinel2.github.io/portfolio.html#pilltip-data) · [복약 챗봇 설계](https://martinel2.github.io/portfolio.html#pilltip-personalization)
 
-2025.03 — 2025.12 · 부산대학교 · **Backend / AI 응용 개발**
+2025.03 — 2025.12 · 부산대학교 졸업과제 · 팀 프로젝트 (3명 + 디자이너) · **핵심 백엔드 · 데이터 정제**
 
-팀원 담당: Android 전반과 문진표 기능, 사용자 DB 모델링, 로그인 등 사용자 관련 기능과 AES-GCM 등 보안 구현. 아래 목록은 제가 구현한 기능입니다.
+- **시작 계기:** 약품 정보가 흩어져 있어, 지금 건강 상태에서 특정 약을 먹어도 되는지 확인하기 어렵다는 문제에서 출발했습니다.
+- **팀 구성:** 본인(백엔드·AI), Android 1명(Kotlin 앱 전반), 백엔드·보안 1명(사용자 DB, 로그인, 문진표, AES-GCM), 디자이너
 
-- Java·Spring Boot 기반 의약품 DB 설계, 의약품 검색·자동완성과 복약 위험정보(DUR) 표출 구현.
+**주요 개발**
+
+- Java·Spring Boot 기반 의약품·건강기능식품 DB 설계, 검색·자동완성과 복약 위험정보(DUR)·주의 정보 표출 구현.
 - FCM을 활용한 복약 알림·복약 로그, 딥링크 기반 친구 초대, 가족 프로필 전환 기능 구현.
 - **의약품 데이터 정제·변환:** 약 4만 4천 건의 원문을 쉬운 설명으로 변환. 문장 중복 제거와 성분별 누락 보완, Batch API를 적용해 변환 대상을 1GB → 326MB로 축소.
 - **개인화 복약 챗봇:** 증상과 약품 효능을 의미 검색으로 연결하고, 약품 탐색·복약 위험·섭취량별 처리 경로 구현. 임신 여부·복용약·기저질환은 외부 LLM 입력에서 제외하고 내부 코드로 판단.
@@ -63,6 +72,7 @@
 
 ## 활동
 
+- **백준 945일 연속 문제 해결** (2022.02 — 2025.07): 하루 한 문제를 목표로 solved.ac 기준 최장 945일 연속 문제를 해결했습니다. 누적 1,659문제, Platinum IV. [풀이 저장소](https://github.com/Martinel2/BaekJoon) · [solved.ac](https://solved.ac/profile/kkuldangi3)
 - **부산대학교 APPTIVE** (2025.03 — 2026.01): Backend 멘티 및 멘토. 멘티 12명 대상 6회 멘토링과 코드 리뷰. HTTP·Servlet·REST API·DB 기초를 보강하는 커리큘럼 개편에 참여했습니다. [멘토 공로상](https://martinel2.github.io/assets/evidence/apptive-merit.jpeg)
 - **SK AI SUMMIT · K-ICT WEEK in Busan** (2025.11 / 2025.07): 부산대학교 대표 전시팀으로 Pilltip 부스를 운영하고 서비스 시연과 기술 질의응답을 진행했습니다. [현장 사진](https://martinel2.github.io/#activity-gallery)
 - **AWS 교육** (2026.06 — 2026.07): Cloud Practitioner Essentials, Machine Learning Engineering on AWS, Developing Generative AI Applications on AWS 이수
@@ -87,4 +97,6 @@
 
 ## 알고리즘
 
-![Solved.ac Profile](https://mazassumnida.wtf/api/v2/generate_badge?boj=kkuldangi3)
+[![Solved.ac Profile](https://mazassumnida.wtf/api/v2/generate_badge?boj=kkuldangi3)](https://solved.ac/profile/kkuldangi3)
+
+<img src="https://martinel2.github.io/assets/evidence/baekjoon-streak.png" alt="solved.ac 2022–2025 연도별 스트릭" width="720">
