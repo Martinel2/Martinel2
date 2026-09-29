@@ -1,4 +1,4 @@
-⁹# 김재형 | Backend & AI Application Developer
+# 김재형 | Backend & AI Application Developer
 
 실패의 원인을 깊이 파고들어 해결하는 것을 좋아하는 개발자
 
