@@ -4,15 +4,15 @@
 
 가설을 실험으로 확인하고, 결과가 달라진 원인을 찾아 다음 개선으로 연결합니다. AI의 정확도와 비용, 처리 시간을 함께 살피며 서비스에 맞는 구현을 선택합니다.
 
-[소개](https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile) · [포트폴리오](https://martinel2.github.io/portfolio.html?utm_source=github&utm_medium=referral&utm_campaign=profile) · [블로그](https://velog.io/@kkuldangi3/posts) · [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
+[소개](https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-intro) · [포트폴리오](https://martinel2.github.io/portfolio.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-portfolio) · [블로그](https://velog.io/@kkuldangi3/posts) · [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
 
 **Email**: kkuldangi2@gmail.com
 
 ## 주요 경험
 
-- **[PDF 변환 통과율 45.17% → 89.89% 개선](https://martinel2.github.io/portfolio.html?utm_source=github&utm_medium=referral&utm_campaign=profile#fruition-document)** — PDF 30쪽의 내부 평가 결과. 본문과 표·수식의 처리 경로를 나누고, 필요한 부분만 AI로 복원했습니다.
-- **[RAG 근거 충족률 66.25% → 91.25% 개선](https://martinel2.github.io/portfolio.html#fruition-jev-evidence?utm_source=github&utm_medium=referral&utm_campaign=profile)** — 답이 있는 80문항에서 필요한 근거를 충족한 질문 53 → 73건. Jev 도입 후 후보 수와 병렬 처리를 조정해 시간 중앙값 9.090초 → 2.251초로 단축했습니다.
-- **[약품 설명 변환: 예상 $200 대비 실제 $11.18](https://martinel2.github.io/portfolio.html#pilltip-data)** — 완전 일치·의미 중복 제거, 누락된 성분별 주의사항 보완, GPT Batch API 변환을 연결했습니다. 비용은 전체 원문 변환 예상치와 실제 API 지출의 비교입니다.
+- **[PDF 변환 통과율 45.17% → 89.89% 개선](https://martinel2.github.io/portfolio.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-pdf#fruition-document)** — PDF 30쪽의 내부 평가 결과. 본문과 표·수식의 처리 경로를 나누고, 필요한 부분만 AI로 복원했습니다.
+- **[RAG 근거 충족률 66.25% → 91.25% 개선](https://martinel2.github.io/portfolio.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-jev#fruition-jev-evidence)** — 답이 있는 80문항에서 필요한 근거를 충족한 질문 53 → 73건. Jev 도입 후 후보 수와 병렬 처리를 조정해 시간 중앙값 9.090초 → 2.251초로 단축했습니다.
+- **[약품 설명 변환: 예상 $200 대비 실제 $11.18](https://martinel2.github.io/portfolio.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-pilltip#pilltip-data)** — 완전 일치·의미 중복 제거, 누락된 성분별 주의사항 보완, GPT Batch API 변환을 연결했습니다. 비용은 전체 원문 변환 예상치와 실제 API 지출의 비교입니다.
 
 ## 기술
 
@@ -24,7 +24,7 @@
 
 ### Fruition | 문서를 지식으로 쌓고 활용하는 AI 워크스페이스
 
-[GitHub · AI 저장소](https://github.com/FruitionKR/Fruition-ai) · [상세 경험](https://martinel2.github.io/portfolio.html#fruition-document)
+[GitHub · AI 저장소](https://github.com/FruitionKR/Fruition-ai) · [상세 경험](https://martinel2.github.io/portfolio.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-detail#fruition-document)
 
 2026.04 — 현재 · AI SW 마에스트로 17기 · 팀 프로젝트 (3명 + 디자이너) · **AI 파트 리드**
 
@@ -45,7 +45,7 @@
 
 ### Pilltip | 개인 맞춤 AI 복약 관리 서비스
 
-[GitHub](https://github.com/PillTipKR/Pilltip) · [데이터 정제 경험](https://martinel2.github.io/portfolio.html#pilltip-data) · [복약 챗봇 설계](https://martinel2.github.io/portfolio.html#pilltip-personalization)
+[GitHub](https://github.com/PillTipKR/Pilltip) · [데이터 정제 경험](https://martinel2.github.io/portfolio.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=pilltip-data#pilltip-data) · [복약 챗봇 설계](https://martinel2.github.io/portfolio.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=pilltip-chatbot#pilltip-personalization)
 
 2025.03 — 2025.12 · 부산대학교 졸업과제 · 팀 프로젝트 (3명 + 디자이너) · **핵심 백엔드 · 데이터 정제**
 
@@ -74,7 +74,7 @@
 
 - **AWS 교육** (2026.06 — 2026.07): Cloud Practitioner Essentials, Machine Learning Engineering on AWS, Developing Generative AI Applications on AWS 이수
 - **부산대학교 APPTIVE** (2025.03 — 2026.01): Backend 멘티 및 멘토. 멘티 12명 대상 6회 멘토링과 코드 리뷰. HTTP·Servlet·REST API·DB 기초를 보강하는 커리큘럼 개편에 참여했습니다. [멘토 공로상](https://martinel2.github.io/assets/evidence/apptive-merit.jpeg)
-- **SK AI SUMMIT · K-ICT WEEK in Busan** (2025.11 / 2025.07): 부산대학교 대표 전시팀으로 Pilltip 부스를 운영하고 서비스 시연과 기술 질의응답을 진행했습니다. [현장 사진](https://martinel2.github.io/#activity-gallery)
+- **SK AI SUMMIT · K-ICT WEEK in Busan** (2025.11 / 2025.07): 부산대학교 대표 전시팀으로 Pilltip 부스를 운영하고 서비스 시연과 기술 질의응답을 진행했습니다. [현장 사진](https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=activity-gallery#activity-gallery)
 - **백준 945일 연속 문제 해결** (2022.02 — 2025.07): 하루 한 문제를 목표로 solved.ac 기준 최장 945일 연속 문제를 해결했습니다. 누적 1,659문제, Platinum IV. [풀이 저장소](https://github.com/Martinel2/BaekJoon) · [solved.ac](https://solved.ac/profile/kkuldangi3)
 
 ## 수상
