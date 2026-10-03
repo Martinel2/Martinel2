@@ -11,7 +11,7 @@
 ## 주요 경험
 
 - **[PDF 변환 통과율 45.17% → 89.89% 개선](https://martinel2.github.io/portfolio.html#fruition-document?utm_source=github&utm_medium=referral&utm_campaign=profile)** — PDF 30쪽의 내부 평가 결과. 본문과 표·수식의 처리 경로를 나누고, 필요한 부분만 AI로 복원했습니다.
-- **[RAG 근거 충족률 66.25% → 91.25% 개선](https://martinel2.github.io/portfolio.html#fruition-jev-evidence)** — 답이 있는 80문항에서 필요한 근거를 충족한 질문 53 → 73건. Jev 도입 후 후보 수와 병렬 처리를 조정해 시간 중앙값 9.090초 → 2.251초로 단축했습니다.
+- **[RAG 근거 충족률 66.25% → 91.25% 개선](https://martinel2.github.io/portfolio.html#fruition-jev-evidence?utm_source=github&utm_medium=referral&utm_campaign=profile)** — 답이 있는 80문항에서 필요한 근거를 충족한 질문 53 → 73건. Jev 도입 후 후보 수와 병렬 처리를 조정해 시간 중앙값 9.090초 → 2.251초로 단축했습니다.
 - **[약품 설명 변환: 예상 $200 대비 실제 $11.18](https://martinel2.github.io/portfolio.html#pilltip-data)** — 완전 일치·의미 중복 제거, 누락된 성분별 주의사항 보완, GPT Batch API 변환을 연결했습니다. 비용은 전체 원문 변환 예상치와 실제 API 지출의 비교입니다.
 
 ## 기술
