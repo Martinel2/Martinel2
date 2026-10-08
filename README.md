@@ -34,8 +34,6 @@ RAG 근거 충족률을 66.25%에서 91.25%로, AI 문서 편집 품질을 82.5%
 - **팀 구성:** 본인(AI 기능 전체), 백엔드 1명(Spring 백엔드 전체), 프론트엔드·DevOps 1명(프론트엔드, MSA 기반 AWS 배포), 외주 디자이너 · 멘토 3명(Gen AI 품질·평가 / 백엔드 / 마일스톤·MSA 설계·문서화)
 - MSA의 초기 설계를 제안하고 팀원·멘토와 논의해 최종 구조를 함께 완성했습니다.
 
-<img src="https://martinel2.github.io/assets/projects/fruition-system-architecture.jpg" alt="Fruition 시스템 아키텍처" width="720">
-
 **주요 개발**
 
 - **답변 근거 선택**
