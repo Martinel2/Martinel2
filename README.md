@@ -1,4 +1,5 @@
-<img width="1584" height="396" alt="linkedin-banner" src="https://github.com/user-attachments/assets/d81eebe5-da55-4662-b59f-da9589c3900e" />
+<img width="1584" height="396" alt="linkedin-banner" src="https://github.com/user-attachments/assets/80ce86dc-acaa-439e-9259-a02ea9119789" />
+
 
 AI를 최대한 활용해 사람들을 이롭게 하는 서비스를 개발하고자 합니다.
 
