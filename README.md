@@ -1,5 +1,7 @@
 <a href="https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=banner"><img width="1584" height="396" alt="김재형 소개 페이지로 이동" src="https://github.com/user-attachments/assets/713117c0-9eda-463e-9604-724a75378ac1" /></a>
 
+**한국어** | [English](README.en.md)
+
 
 AI를 최대한 활용해 사람들을 이롭게 하는 서비스를 개발하고자 합니다.
 
