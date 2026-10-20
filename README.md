@@ -1,4 +1,5 @@
-# 김재형 | AI Engineer
+<img width="1584" height="396" alt="linkedin-banner" src="https://github.com/user-attachments/assets/713117c0-9eda-463e-9604-724a75378ac1" />
+
 
 AI를 최대한 활용해 사람들을 이롭게 하는 서비스를 개발하고자 합니다.
 
