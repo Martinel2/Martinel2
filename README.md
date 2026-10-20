@@ -5,7 +5,7 @@ AI를 최대한 활용해 사람들을 이롭게 하는 서비스를 개발하�
 
 RAG 근거 충족률을 66.25%에서 91.25%로, AI 문서 편집 품질을 82.5%에서 91.2%로 높이며, AI가 틀린 근거로 답하거나 사용자 문서를 함부로 바꾸지 않도록 평가, 승인, 복구 구조를 설계해 온 AI 엔지니어입니다. 정확도와 비용, 응답 시간의 트레이드오프를 평가로 확인한 뒤 서비스에 맞는 구현을 선택합니다.
 
-[소개](https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-intro) | [포트폴리오](https://martinel2.github.io/portfolio.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-portfolio) | [이력서](https://martinel2.github.io/resume.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-resume) | [블로그](https://velog.io/@kkuldangi3/posts) | [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
+[About Me](https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-intro) | [My blog](https://velog.io/@kkuldangi3/posts) | [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
 
 **Email**: kkuldangi2@gmail.com
 
