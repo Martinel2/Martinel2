@@ -5,7 +5,7 @@
 
 AI를 최대한 활용해 사람들을 이롭게 하는 서비스를 개발하고자 합니다.
 
-RAG 근거 충족률을 66.25%에서 91.25%로, AI 문서 편집 품질을 82.5%에서 91.2%로 높이며, AI가 틀린 근거로 답하거나 사용자 문서를 함부로 바꾸지 않도록 평가, 승인, 복구 구조를 설계해 온 AI 엔지니어입니다. 정확도와 비용, 응답 시간의 트레이드오프를 평가로 확인한 뒤 서비스에 맞는 구현을 선택합니다.
+직접 작성하고 팀원과 검수한 평가셋에서 RAG 정답률을 71.7%에서 93.0%로, AI 문서 편집 성공률을 85.6%에서 88.9%로 높이며, AI가 틀린 근거로 답하거나 사용자 문서를 함부로 바꾸지 않도록 평가, 승인, 복구 구조를 설계해 온 AI 엔지니어입니다. 정확도와 비용, 응답 시간의 트레이드오프를 평가로 확인한 뒤 서비스에 맞는 구현을 선택합니다.
 
 [About Me](https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-intro) | [My blog](https://velog.io/@kkuldangi3/posts) | [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
 
@@ -13,14 +13,14 @@ RAG 근거 충족률을 66.25%에서 91.25%로, AI 문서 편집 품질을 82.5%
 
 ## 핵심 경험
 
-- **[RAG 근거 선택 개선: 근거 충족률 66.25% → 91.25%, 답이 없는 질문에 근거를 붙인 경우 20 → 0건](https://martinel2.github.io/portfolio/fruition-jev-evidence.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-jev)**
-  답변 근거가 틀리면 답변 전체를 믿을 수 없게 된다고 생각해, 근거를 고르는 단계를 판단 전용 모델 Jev로 바꿨습니다. GPT에게 고르게 하면 비용이 약 2.5배였고, 검색 가중치를 여러 값으로 바꿔 봐도 점수가 비슷한 수준에 머물렀기 때문입니다. 다만 처리 시간이 크게 늘어, 후보 수와 병렬 수를 조정해 선택 시간 중앙값을 9.090초에서 1.137초로 줄였습니다.
-- **[에이전트 실행 환경 설계: 사용자 정의 Skill과 승인 기반 실행, 편집 품질 82.5% → 91.2%(114건 평가)](https://martinel2.github.io/portfolio/fruition-agent.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-agent)**
+- **[RAG 근거 선택 개선: 정답률 71.7% → 93.0%, 근거 적합성 70.0% → 95.4%(질문 100개 × 3회)](https://martinel2.github.io/portfolio/fruition-jev-evidence.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-jev)**
+  답변 근거가 틀리면 답변 전체를 믿을 수 없게 된다고 생각해, 근거를 고르는 단계를 판단 전용 모델 Jev로 바꿨습니다. 도입 당시 비교에서 GPT는 비용이 약 2.5배였고, 검색 가중치를 여러 값으로 바꿔 봐도 점수가 비슷한 수준에 머물렀기 때문입니다. 이후 직접 작성하고 팀원과 검수한 평가셋으로 다시 평가해, 요청 묶음 오류를 고치고 후보를 300개에서 200개로 줄였습니다.
+- **[에이전트 실행 환경 설계: 사용자 정의 Skill과 승인 기반 실행, 편집 성공률 85.6% → 88.9%(30건 × 3회)](https://martinel2.github.io/portfolio/fruition-agent.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-agent)**
   회의록 정리처럼 사용자마다 반복하는 작업이 달라, 사용자가 직접 Skill로 정의해 다시 쓸 수 있게 했습니다. 그런데 AI가 문서를 함부로 바꾸면 사용자가 서비스를 믿고 맡길 수 없다고 판단해, 권한과 실행 범위는 코드가 검사하고 실제 반영은 사용자가 승인한 뒤에만 하도록 나눴습니다. 코드 검사만으로는 요청 누락을 잡지 못해, 의미 평가 후 한 번만 다시 쓰게 했습니다.
-- **[데이터 파이프라인 구축: PDF 복원율 45.17% → 89.89%, 약품 변환 비용 예상 $200 대비 $11.18](https://martinel2.github.io/portfolio/fruition-document.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-pdf)**
+- **[데이터 파이프라인 구축: 유형별 PDF 15개 본문 96.1%, 표 셀 99.3% 복원, 약품 변환 비용 예상 $200 대비 $11.18](https://martinel2.github.io/portfolio/fruition-document.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-pdf)**
   논문의 표와 수식이 깨지면 답변 근거가 되는 수치를 쓸 수 없어, 본문은 빠른 AnyDoc으로 추출하고 표와 수식은 원본 영역을 따로 판독하도록 처리 경로를 나눴습니다. 약품 데이터는 같은 문장을 한 번만 변환하고, 실시간 응답이 필요 없는 작업이라 Batch API를 써 약 4만 4천 건을 예산 안에서 처리했습니다.
 
-수치는 모두 내부 평가 기준입니다.
+수치는 모두 내부 평가 기준입니다. Fruition 평가는 gpt-6-luna로 3회씩 실행하고 코드 검사와 Claude 블라인드 채점으로 판정했으며, PDF 평가의 정답과 판정은 AI가 맡았습니다.
 
 ## 기술
 
@@ -44,19 +44,19 @@ RAG 근거 충족률을 66.25%에서 91.25%로, AI 문서 편집 품질을 82.5%
 
 - **[RAG 과정의 검색 정확도 개선](https://martinel2.github.io/portfolio/fruition-jev-evidence.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-jev)**
   - 문제: 문서 근거로 답하는 서비스에서 기존 검색이 근거를 놓치거나 답 없는 질문에도 근거를 붙여 답변 신뢰도가 흔들림.
-  - 판단: GPT 선택은 비용(약 2.5배)과 시간 부담, 가중치와 RRF 조정은 여러 값을 실험해도 점수가 비슷해, 요청 분류에서 먼저 검증한 Jev(정답 77 → 81/98건) 채택.
-  - 해결: 벤치마크상 한국어 의미 검색이 가장 좋은 BGE-M3와 정확한 용어를 잡는 BM25로 후보를 모으고 Jev가 최종 근거를 고르는 2단계 구조. 동일 후보와 블라인드 교차 채점으로 비교한 뒤 후보를 300개로 줄이고 병렬 4, 6, 8, 10을 비교해 정확도 차이 없이 가장 효율적인 8병렬로 조정.
-  - 성과: 답이 있는 80문항의 근거 충족률 66.25% → 91.25%.
+  - 판단: 도입 당시 GPT 선택은 비용(약 2.5배)과 시간 부담, 가중치와 RRF 조정은 여러 값을 실험해도 점수가 비슷해, 요청 분류에서 먼저 검증한 Jev(정답 77 → 81/98건) 채택.
+  - 해결: 벤치마크상 한국어 의미 검색이 가장 좋은 BGE-M3와 정확한 용어를 잡는 BM25로 후보를 모으고 Jev가 최종 근거를 고르는 2단계 구조. 동일 후보와 블라인드 교차 채점으로 비교한 뒤 후보를 300개로 줄이고 병렬 4, 6, 8, 10을 비교해 정확도 차이 없이 가장 효율적인 8병렬로 조정. 이후 실제 평가셋에서 후보 수를 다시 비교해 200개로 조정.
+  - 성과: 직접 작성하고 팀원과 검수한 질문 100개 × 3회에서 정답률 71.7% → 93.0%, 근거 적합성 70.0% → 95.4%. 일반 RAG 대비 오답 7.3% → 1.0%. 전체 응답 평균 5.5초(일반 RAG 4.3초).
 - **[사용자 정의 Agent Skill과 승인 기반 실행](https://martinel2.github.io/portfolio/fruition-agent.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-agent)**
   - 문제: 사용자마다 반복 작업이 달라 모두 기능으로 만들 수 없고, AI 편집안이 요청을 빠뜨린 채 전달돼 같은 결과를 원하는 작업을 운에 맡기게 됨.
   - 판단: 지침은 AI, 권한과 실행 범위 검사는 코드, 게시와 실제 반영은 사용자가 맡도록 책임 분리. 코드의 형식 검사만으로는 요청 누락을 못 잡아 LLM 의미 평가를 추가.
   - 해결: 자연어 지침 작성, 검토, 게시와 권한 및 승인 우회 검사, 미리보기 후 별도 승인. 편집 결과는 의미 평가 후 최대 1회 재작성. 생성, 평가, 재작성은 단계별로 추적하도록 LangGraph 노드로 나누고, 게시한 Skill은 PostgreSQL에 불변 버전으로 저장.
-  - 성과: 편집 품질 94 → 104/114건(82.5% → 91.2%). 승인 전에는 문서가 바뀌지 않음을 확인. 통과하지 못한 편집안 20건 → 10건.
+  - 성과: 직접 작성하고 팀원과 검수한 요청 30건 × 3회에서 편집 성공 77 → 80/90건(85.6% → 88.9%). 승인 전에는 문서가 바뀌지 않음을 확인.
 - **[PDF → Markdown 변환](https://martinel2.github.io/portfolio/fruition-document.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-pdf)**
   - 문제: 논문 PDF의 표와 수식이 깨지면 Wiki와 답변의 근거가 되는 수치를 쓸 수 없음.
   - 판단: 깨진 곳만 고치는 방식은 탐지가 오류를 놓쳤고, 전체 AI 변환은 표 및 수식 정확도와 비용이 부족해 내용 유형별 처리로 전환. 본문은 추출이 빠른 AnyDoc, 복원은 GPU 운영비가 드는 sLLM 대신 상용 LLM API.
   - 해결: 본문은 AnyDoc으로 추출해 깨진 부분만 AI로 보완, 표와 수식은 원본 영역을 따로 판독, 그림은 원본 보존.
-  - 성과: PDF → Markdown 복원율이 기존 Docling만 사용할 때 약 45%에서 약 90%로 개선.
+  - 성과: 도입 실험(PDF 4개)에서 복원율을 기존 Docling만 사용할 때 약 45%에서 약 90%로 개선. 유형별 PDF 15개 × 3회 평가에서 제목 97.6%, 본문 96.1%, 표 셀 99.3%, 수식 100%, 이미지 91.3% 복원(AI 판정).
 - **[AI 작업 취소와 변경 복구](https://martinel2.github.io/portfolio/fruition-rollback.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-rollback)**
   - 문제: AI 작업은 모델 호출 사이에 문서, 폴더, Wiki를 여러 번 저장해, 취소해도 일부 변경이 남으면 사용자가 AI에게 작업을 맡길 수 없음.
   - 판단: 모델에 반대 작업을 시키면 원래 값을, 전체 잠금은 장애 대응을 보장할 수 없어 실행 기록 기반의 역순 복구 선택.
