@@ -19,11 +19,11 @@ I lead the AI work on Fruition, a team-built, LLM Wiki-based knowledge workspace
 - **[Building data pipelines: 96.1% body text and 99.3% table cells restored across 15 PDFs, drug conversion about 94% below the $200 estimate ($11.18 spent)](https://martinel2.github.io/en/portfolio/fruition-document.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-pdf-en)**
   Broken tables and equations lose the figures answers rely on, so body text uses fast AnyDoc and table and equation regions are read separately. I split drug information into sentence blocks and consolidated duplicates, reducing the 2025 dataset from about 1GB to 326MB. Since conversion did not need real-time responses, Batch API, priced 50% below the standard API at the time, kept about 44,000 records within budget.
 
-Fruition’s latest RAG and editing results come from internal evaluations run three times with gpt-6-luna. PDF restoration was AI-judged. Pilltip’s cost figures compare the original estimate with actual API spending; preprocessing labor is excluded.
+Fruition’s latest RAG and editing results come from internal evaluations run three times with gpt-6-luna. PDF restoration was AI-judged. MCP results are real-client integration checks with synthetic documents. Pilltip’s cost figures compare the original estimate with actual API spending; preprocessing labor is excluded.
 
 ## Skills
 
-- **AI & Search:** LangChain, LangGraph, Spring AI, RAG, LangSmith, LLM Evaluation, LLM Guardrail
+- **AI & Search:** LangChain, LangGraph, Spring AI, RAG, LangSmith, LLM Evaluation, LLM Guardrail, MCP, OAuth
 - **Backend:** Java, Spring Boot, Python
 - **Data & Infra:** MySQL, PostgreSQL, Redis, Elasticsearch, Weaviate, Docker, Docker Compose, GitHub Actions, Kafka
 
@@ -52,6 +52,12 @@ Fruition’s latest RAG and editing results come from internal evaluations run t
   - Decision: AI drafts instructions, code checks permissions and scope, and the user decides publishing and applying. Code format checks missed omitted requests, so I added LLM semantic evaluation.
   - Solution: Authoring, review and publishing of natural-language instructions with checks against bypassing permission or approval; preview and separate approval before changes; semantic evaluation with at most one rewrite. Generation, evaluation and rewrite run as LangGraph nodes for step-level tracing, and published Skills are stored as immutable versions in PostgreSQL.
   - Result: On 30 requests × 3 runs that I wrote and reviewed with my team, edit success 77 → 80 of 90 (85.6% → 88.9%); documents stayed unchanged before approval.
+- **[MCP integration with Codex and Claude Code](https://martinel2.github.io/en/portfolio/fruition-mcp.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-mcp-en)**
+  - Problem: Users needed to reuse Fruition documents and Wiki pages from their own AI tools without allowing AI to approve its own changes.
+  - Decision: External models draft proposals; Fruition keeps authorization, web approval, storage and billing.
+  - Solution: Scoped OAuth connections, source-version and permission checks before writes, explicit web approval, and receipts to prevent duplicate billing.
+  - Result: Verified ingestion, Wiki retrieval, edit proposals, web approval, storage and source rereading in both real clients using synthetic documents. Confirmed 21 tools in Claude Code; disconnecting Codex blocked its next access while Claude stayed connected. Full native execution of the expanded PDF, Skill and meeting tools remains unverified.
+
 - **[PDF → Markdown conversion](https://martinel2.github.io/en/portfolio/fruition-document.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-pdf-en)**
   - Problem: Broken tables and equations in paper PDFs made the figures behind Wiki pages and answers unusable.
   - Decision: Repairing only detected damage missed errors, and full AI conversion lacked table and equation accuracy and was costly, so I split processing by content type. Body text uses fast AnyDoc extraction; repair moved from an sLLM to commercial LLM APIs to avoid GPU server costs.
@@ -63,6 +69,7 @@ Fruition’s latest RAG and editing results come from internal evaluations run t
   - Solution: Save the cancel state first to block later writes, then restore children first in reverse order; rebuild merged Wiki pages without the cancelled contribution.
   - Result: Cancelling a two-folder, six-document task at each of 9 points restored the original state, with no model calls during rollback.
 - **[Parallel Wiki generation](https://martinel2.github.io/en/portfolio/fruition-ingest.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-ingest-en):** Distributed per-document jobs over Kafka with up to 4 workers; analysis of 4 documents fell from 282.11s to 73.89s (about 74% faster).
+- **[Coding agent orchestration](https://velog.io/@kkuldangi3/AI-에이전트로-2일간-PR-78개-쏘기):** Across five repositories, agents created 78 PRs and 43 issues over two days. I chose design trade-offs, recorded decisions and ran reviews in a fresh session, requiring code evidence for findings. The final alignment snapshot was 43/45; reviewing 31 closed issues found 7 unfinished, which were reopened. These are retrospective figures; PR creation is not merge or deployment.
 - **MSA:** Splitting only by feature would keep DB load the same while adding hops, so I proposed splitting by data ownership and co-designed boundaries and communication with teammates and mentors.
 
 ### Pilltip | Personalized AI medication service

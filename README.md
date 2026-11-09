@@ -25,11 +25,11 @@ LLM Wiki 기반 AI 지식 관리 워크스페이스 팀프로젝트 Fruition에�
   - 논문의 표와 수식이 깨지면 답변 근거가 되는 수치를 쓸 수 없어, 본문은 빠른 AnyDoc으로 추출하고 표와 수식은 원본 영역을 따로 판독하도록 처리 경로를 나눴습니다.
   - 문장을 의미 단위의 블럭으로 두어 의미가 같은 문장들을 모두 통합해 1GB의 약품 데이터를 326MB로 줄였고, 실시간 응답이 필요 없는 작업이라 기존 API 대비 50% 저렴한 Batch API를 써 약 4만 4천 건을 예산 안에서 처리했습니다.
 
-수치는 모두 gpt-6-luna로 3회씩 실행한 뒤 채점한 내부 평가 기준입니다. 
+Fruition의 최신 RAG·편집 수치는 gpt-6-luna로 3회씩 실행한 내부 평가 기준입니다. PDF 복원율은 AI 판정이며, MCP는 합성 문서를 사용한 실제 클라이언트 통합 검증입니다. 약품 변환 비용은 예상치와 실제 API 지출의 비교입니다.
 
 ## 기술
 
-- **AI & Search:** LangChain, LangGraph, Spring AI, RAG, LangSmith, LLM Evaluation, LLM Guardrail
+- **AI & Search:** LangChain, LangGraph, Spring AI, RAG, LangSmith, LLM Evaluation, LLM Guardrail, MCP, OAuth
 - **Backend:** Java, Spring Boot, Python
 - **Data & Infra:** MySQL, PostgreSQL, Redis, Elasticsearch, Weaviate, Docker, Docker Compose, GitHub Actions, Kafka
 
@@ -60,6 +60,12 @@ LLM Wiki 기반 AI 지식 관리 워크스페이스 팀프로젝트 Fruition에�
   - 해결: 자연어 지침 작성, 검토, 게시와 권한 및 승인 우회 검사, 미리보기 후 별도 승인. 편집 결과는 의미 평가 후 최대 1회 재작성. 생성, 평가, 재작성은 단계별로 추적하도록 LangGraph 노드로 나누고, 게시한 Skill은 PostgreSQL에 불변 버전으로 저장.
   - 성과: 직접 작성하고 팀원과 검수한 요청 30건 × 3회에서 편집 성공 77 → 80/90건(85.6% → 88.9%). 승인 전에는 문서가 바뀌지 않음을 확인.
   
+- **[Codex·Claude Code와 연결하는 MCP 구현](https://martinel2.github.io/portfolio/fruition-mcp.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-mcp)**
+  - 문제: 사용자가 자신의 AI 도구에서 Fruition 문서·Wiki를 활용하되 AI가 자기 변경안을 승인하지 못하게 해야 했습니다.
+  - 판단: 외부 모델은 변경안 생성, Fruition은 권한·웹 승인·저장·정산을 담당하도록 나눴습니다.
+  - 해결: 범위를 제한한 OAuth 연결, 쓰기 전 원문 버전·권한 재검사, 명시적 웹 승인, 영수증 기반 중복 정산 방지를 구현했습니다.
+  - 성과: 합성 문서로 실제 Codex·Claude Code의 편입·Wiki 조회·편집 제안·웹 승인·저장·원문 재조회를 확인했습니다. Claude에서 도구 21개를 발견했고, Codex 연결 해제 후 접근 차단과 Claude 연결 유지를 확인했습니다. 확장 PDF·스킬·회의록의 전체 실행은 추가 검증이 필요합니다.
+
 - **[PDF → Markdown 변환](https://martinel2.github.io/portfolio/fruition-document.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-pdf)**
   - 문제: 논문 PDF의 표와 수식이 깨지면 Wiki와 답변의 근거가 되는 수치를 쓸 수 없음.
   - 판단: 깨진 곳만 고치는 방식은 탐지가 오류를 놓쳤고, 전체 AI 변환은 표 및 수식 정확도와 비용이 부족해 내용 유형별 처리로 전환. 본문은 추출이 빠른 AnyDoc, 복원은 GPU 운영비가 드는 sLLM 대신 상용 LLM API를 채택.
@@ -73,6 +79,7 @@ LLM Wiki 기반 AI 지식 관리 워크스페이스 팀프로젝트 Fruition에�
   - 성과: 폴더 2개와 문서 6개 정리 작업을 9개 지점 각각에서 취소해도 원래 상태로 복원, 복구 중 모델 호출 없음.
   
 - **[문서의 Wiki 생성 병렬화](https://martinel2.github.io/portfolio/fruition-ingest.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-ingest):** Kafka로 문서별 작업을 나눠 Worker 최대 4개로 처리해 문서 4개 분석 시간 282.11초 → 73.89초(약 74% 단축).
+- **[코딩 에이전트 운용](https://velog.io/@kkuldangi3/AI-에이전트로-2일간-PR-78개-쏘기):** 2일간 저장소 5개에 PR 78개와 이슈 43개를 생성했습니다. 저는 설계 대안 선택과 결정 기록, 별도 세션 리뷰와 코드 근거를 통한 지적 재확인을 맡았습니다. 최종 계획 일치 판정 43/45, 닫힌 이슈 31개 중 미완료 7개를 발견해 재개했습니다. 회고 기록 기준이며 PR 생성 수를 병합·배포 수와 구분합니다.
 - **MSA:** 기능별로만 나누면 DB 부하는 그대로이고 서비스 간 호출만 늘어난다고 보고 데이터 소유권 기준 분리를 제안, 팀원 및 멘토와 경계와 통신 방식을 공동 설계.
 
 ### Pilltip | 개인 맞춤 AI 안심 복약 솔루션
