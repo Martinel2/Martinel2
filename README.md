@@ -17,8 +17,9 @@ AI를 최대한 활용해 사람들을 이롭게 하는 서비스를 개발하�
   답변 근거가 틀리면 답변 전체를 믿을 수 없게 된다고 생각해, 근거를 고르는 단계를 판단 전용 모델 Jev로 바꿨습니다. 도입 당시 비교에서 GPT는 비용이 약 2.5배였고, 검색 가중치를 여러 값으로 바꿔 봐도 점수가 비슷한 수준에 머물렀기 때문입니다. 이후 직접 작성하고 팀원과 검수한 평가셋으로 다시 평가해, 요청 묶음 오류를 고치고 후보를 300개에서 200개로 줄였습니다.
 - **[에이전트 실행 환경 설계: 사용자 정의 Skill과 승인 기반 실행, 편집 성공률 85.6% → 88.9%(30건 × 3회)](https://martinel2.github.io/portfolio/fruition-agent.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-agent)**
   회의록 정리처럼 사용자마다 반복하는 작업이 달라, 사용자가 직접 Skill로 정의해 다시 쓸 수 있게 했습니다. 그런데 AI가 문서를 함부로 바꾸면 사용자가 서비스를 믿고 맡길 수 없다고 판단해, 권한과 실행 범위는 코드가 검사하고 실제 반영은 사용자가 승인한 뒤에만 하도록 나눴습니다. 코드 검사만으로는 요청 누락을 잡지 못해, 의미 평가 후 한 번만 다시 쓰게 했습니다.
-- **[데이터 파이프라인 구축: 유형별 PDF 15개 본문 96.1%, 표 셀 99.3% 복원, 약품 변환 비용 예상 $200 대비 $11.18](https://martinel2.github.io/portfolio/fruition-document.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-pdf)**
-  논문의 표와 수식이 깨지면 답변 근거가 되는 수치를 쓸 수 없어, 본문은 빠른 AnyDoc으로 추출하고 표와 수식은 원본 영역을 따로 판독하도록 처리 경로를 나눴습니다. 약품 데이터는 같은 문장을 한 번만 변환하고, 실시간 응답이 필요 없는 작업이라 Batch API를 써 약 4만 4천 건을 예산 안에서 처리했습니다.
+- **[데이터 파이프라인 구축: 유형별 PDF 15개 본문 96.1%, 표 셀 99.3% 복원, 약품 변환 비용 예상 $200 대비 실제 $11.18로 약 94% 절감](https://martinel2.github.io/portfolio/fruition-document.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-pdf)**
+- 논문의 표와 수식이 깨지면 답변 근거가 되는 수치를 쓸 수 없어, 본문은 빠른 AnyDoc으로 추출하고 표와 수식은 원본 영역을 따로 판독하도록 처리 경로를 나눴습니다.
+- 약품 데이터는 같은 문장을 한 번만 변환할 수 실시간 응답이 필요 없는 작업이라 기존 API 대비 50% 저렴한 Batch API를 써 약 4만 4천 건을 예산 안에서 처리했습니다.
 
 수치는 모두 내부 평가 기준입니다. Fruition 평가는 gpt-6-luna로 3회씩 실행하고 코드 검사와 Claude 블라인드 채점으로 판정했으며, PDF 평가의 정답과 판정은 AI가 맡았습니다.
 
