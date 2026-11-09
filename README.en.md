@@ -4,7 +4,7 @@
 
 I build services that use AI to make people's lives better.
 
-I'm an AI engineer who raised RAG answer accuracy from 71.7% to 93.0% and AI document-editing success from 85.6% to 88.9%, designing evaluation, approval and rollback so AI does not answer from wrong evidence or change users' documents on its own. I weigh accuracy, cost and response time against each other, confirm the trade-off with an evaluation, and then choose the implementation that fits the service.
+I lead the AI work on Fruition, a team-built, LLM Wiki-based knowledge workspace. On evaluation sets I wrote and reviewed with my team, I raised RAG answer accuracy from 71.7% to 93.0% and AI document-editing success from 85.6% to 88.9%, designing evaluation, approval and rollback so AI does not answer from wrong evidence or change users' documents on its own. I weigh accuracy, cost and response time against each other, confirm the trade-off with an evaluation, and then choose the implementation that fits the service.
 
 [About](https://martinel2.github.io/en/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-intro-en) | [Portfolio](https://martinel2.github.io/en/portfolio.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-portfolio-en) | [Resume](https://martinel2.github.io/en/resume.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-resume-en) | [Blog (Korean)](https://velog.io/@kkuldangi3/posts) | [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
 
@@ -16,10 +16,10 @@ I'm an AI engineer who raised RAG answer accuracy from 71.7% to 93.0% and AI doc
   I thought wrong evidence makes the whole answer untrustworthy, so I replaced evidence selection with Jev. At adoption, GPT cost about 2.5× more and tuning search weights kept scores flat. I later re-evaluated on a set I wrote and reviewed with my team, fixed a request-batching bug and cut candidates from 300 to 200.
 - **[Designing the agent execution environment: user-defined skills behind approval, edit success 85.6% → 88.9% (30 requests × 3 runs)](https://martinel2.github.io/en/portfolio/fruition-agent.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-agent-en)**
   Users repeat different tasks, so I let them define their own Skills. I judged that users can't trust AI that changes documents freely, so code checks permissions and scope, and changes apply only after approval. Code checks missed omitted requests, so drafts get a semantic evaluation and one rewrite at most.
-- **[Building data pipelines: 96.1% body text and 99.3% table cells restored across 15 PDFs, drug conversion $200 estimated → $11.18 spent](https://martinel2.github.io/en/portfolio/fruition-document.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-pdf-en)**
-  Broken tables and equations lose the figures answers rely on, so body text uses fast AnyDoc and table and equation regions are read separately. Converting each repeated sentence once with Batch API kept about 44,000 drug records within budget.
+- **[Building data pipelines: 96.1% body text and 99.3% table cells restored across 15 PDFs, drug conversion about 94% below the $200 estimate ($11.18 spent)](https://martinel2.github.io/en/portfolio/fruition-document.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=exp-pdf-en)**
+  Broken tables and equations lose the figures answers rely on, so body text uses fast AnyDoc and table and equation regions are read separately. I split drug information into sentence blocks and consolidated duplicates, reducing the 2025 dataset from about 1GB to 326MB. Since conversion did not need real-time responses, Batch API, priced 50% below the standard API at the time, kept about 44,000 records within budget.
 
-All figures come from internal evaluations.
+Fruition’s latest RAG and editing results come from internal evaluations run three times with gpt-6-luna. PDF restoration was AI-judged. Pilltip’s cost figures compare the original estimate with actual API spending; preprocessing labor is excluded.
 
 ## Skills
 
@@ -33,17 +33,19 @@ All figures come from internal evaluations.
 
 [GitHub | AI repository](https://github.com/FruitionKR/Fruition-ai) | [Project overview](https://martinel2.github.io/en/portfolio/fruition.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-detail-en)
 
-2026.04 — Present | AI SW Maestro, 17th cohort | Deployed on AWS EKS, in QA | Team project (3 + designer) | **AI lead**
+2026.04 — Present | AI SW Maestro, 17th cohort | Alpha testing in progress | Team project (3 + designer) | **AI lead**
 
 - **How it started:** a teammate's pain point with managing documents, refined through design thinking: saved documents could not be found when needed.
 - **Team:** me (all AI), 1 backend (Spring backend), 1 frontend & DevOps (frontend, MSA deployment on AWS), external designer, 3 mentors
+- **Languages and frameworks:** Python (FastAPI, LangChain, LangGraph) for AI services; Java (Spring Boot) for document services; TypeScript (Next.js) for the frontend
+- **Intellectual property:** Software copyright registration completed; patent application filed with a provisional specification
 
 **What I built**
 
 - **[Evidence selection for RAG](https://martinel2.github.io/en/portfolio/fruition-jev-evidence.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-jev-en)**
   - Problem: In a service that answers from documents, retrieval missed evidence and attached evidence to unanswerable questions, undermining trust.
   - Decision: At adoption, GPT selection cost about 2.5x and took longer; tuning weights and RRF gave similar scores across settings, so I adopted Jev, which picks only from fixed options and had first been validated on request routing (77 → 81 of 98 correct).
-  - Solution: Two stages: BGE-M3, the best Korean semantic model in benchmarks, and BM25 for exact terms gather candidates and Jev picks the final evidence. Compared on identical candidates with blind cross-grading, then cut candidates to 300 and compared 4, 6, 8 and 10 parallel batches, choosing 8 with no accuracy difference.
+  - Solution: Two stages: BGE-M3, the best Korean semantic model in benchmarks, and BM25 for exact terms gather candidates and Jev picks the final evidence. Compared on identical candidates with blind cross-grading, then cut candidates to 300 and compared 4, 6, 8 and 10 parallel batches, choosing 8 with no accuracy difference. A later comparison on the updated evaluation set reduced the candidate count to 200.
   - Result: On 100 questions × 3 runs that I wrote and reviewed with my team, answer accuracy 71.7% → 93.0% and evidence sufficiency 70.0% → 95.4%. Wrong answers 7.3% → 1.0% against plain RAG. Average end-to-end response 5.5s (plain RAG 4.3s).
 - **[User-defined task instructions (Skills)](https://martinel2.github.io/en/portfolio/fruition-agent.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=fruition-agent-en)**
   - Problem: Recurring tasks differ by user, so they cannot all be built as features, and AI edits arrived with parts of the request missing, leaving repeatable work to chance.
@@ -67,10 +69,11 @@ All figures come from internal evaluations.
 
 [GitHub repository](https://github.com/PillTipKR/Pilltip) | [Project overview](https://martinel2.github.io/en/portfolio/pilltip.html?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=pilltip-detail-en)
 
-2025.03 — 2025.12 | Pusan National University capstone | 6 users on internal APK builds | Team project (3 + designer) | **Core backend, data preparation**
+2025.03 — 2025.12 | University capstone | Team project (3 + designer) | **Core backend, data preparation**
 
 - **How it started:** drug information is scattered, making it hard to check whether a medicine is safe for your current health condition.
 - **Team:** me (backend & AI), 1 Android (Kotlin app), 1 backend & security (user DB, login, questionnaires, AES-GCM), designer
+- **Languages and frameworks:** Java (Spring Boot, Spring AI) for the backend and chatbot; Python for drug data preparation
 
 **What I built**
 
@@ -96,21 +99,19 @@ All figures come from internal evaluations.
 ## Activities
 
 - **AWS training** (2026.06 — 2026.07): Completed Cloud Practitioner Essentials, Machine Learning Engineering on AWS, and Developing Generative AI Applications on AWS
-- **APPTIVE, Pusan National University** (2025.03 — 2026.01): Backend mentee and mentor. Led 6 mentoring and code-review sessions for 12 mentees. Helped revise the curriculum to strengthen HTTP, Servlet, REST API and database foundations. [Backend Mentor Merit Award](https://martinel2.github.io/assets/evidence/apptive-merit.jpeg) (2026.01.09)
-- **SK AI SUMMIT, K-ICT WEEK in Busan** (2025.11 / 2025.07): Represented Pusan National University at the Pilltip booth, demonstrating the service to more than 100 visitors and answering technical questions.
+- **APPTIVE developer club** (2025.03 — 2026.01): Backend mentee and mentor. Led 6 mentoring and code-review sessions for 12 mentees. Helped revise the curriculum to strengthen HTTP, Servlet, REST API and database foundations. [Backend Mentor Merit Award](https://martinel2.github.io/assets/evidence/apptive-merit.jpeg) (2026.01.09)
+- **SK AI SUMMIT, K-ICT WEEK in Busan** (2025.11 / 2025.07): Represented my university at the Pilltip booth, demonstrating the service to more than 100 visitors and answering technical questions.
 - **945-day Baekjoon problem-solving streak** (2022.02 — 2025.07): Aiming for one problem a day, I reached a longest streak of 945 consecutive days on solved.ac. 1,659 problems solved, Platinum IV. [Solutions](https://github.com/Martinel2/BaekJoon) | [solved.ac](https://solved.ac/profile/kkuldangi3)
 
 ## Awards
 
-- **Capstone Design Gold Award** | 2025.10 | Software & AI division / College of Information and Biomedical Engineering, Pusan National University
+- **Capstone Design Gold Award** | 2025.10 | Software & AI division / University capstone competition
 - **Busan DATA WEEK Top Excellence Award** | 2025.09 | Data utilization case competition / Busan Techno Park
 - **AI LAUNCH Career School Startup Hackathon Encouragement Award** | 2025.09 | KRYPTON X x Root Impact x Google.org
 - **SW University Digital Competition Sponsor Award** | 2025.08 | SW University Council
 
-## Education & certifications
+## Certifications
 
-- **Pusan National University** | 2022.02 — 2026.02 (Transfer) | GPA 4.12 / 4.5
-- **Daegu University** | 2019.03 — 2022.02 (Withdrew) | GPA 4.2 / 4.5
 - **Engineer Information Processing** | 2025.09 | Human Resources Development Service of Korea
 
 ## Writing (Korean)
