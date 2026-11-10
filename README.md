@@ -1,4 +1,4 @@
-<a href="https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=banner"><img width="1584" height="396" alt="소개 페이지로 이동" src="https://github.com/user-attachments/assets/713117c0-9eda-463e-9604-724a75378ac1" /></a>
+<a href="https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=banner"><img width="1584" height="396" alt="소개 페이지로 이동" src="assets/banner-blind.png" /></a>
 
 **한국어** | [English](README.en.md)
 
