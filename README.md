@@ -1,4 +1,4 @@
-<a href="https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=banner"><img width="1584" height="396" alt="김재형 소개 페이지로 이동" src="https://github.com/user-attachments/assets/713117c0-9eda-463e-9604-724a75378ac1" /></a>
+<a href="https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=banner"><img width="1584" height="396" alt="소개 페이지로 이동" src="https://github.com/user-attachments/assets/713117c0-9eda-463e-9604-724a75378ac1" /></a>
 
 **한국어** | [English](README.en.md)
 
@@ -7,7 +7,7 @@ AI를 최대한 활용해 사람들을 이롭게 하는 서비스를 개발하�
 
 LLM Wiki 기반 AI 지식 관리 워크스페이스 팀프로젝트 Fruition에서 AI 파트를 리드하며, 직접 작성하고 팀원과 검수한 평가셋에서 RAG 정답률을 71.7%에서 93.0%로, AI 문서 편집 성공률을 85.6%에서 88.9%로 높이며, AI가 틀린 근거로 답하거나 사용자 문서를 함부로 바꾸지 않도록 평가, 승인, 복구 구조를 설계해 온 AI 엔지니어입니다. 정확도와 비용, 응답 시간의 트레이드오프를 평가로 확인한 뒤 서비스에 맞는 구현을 선택합니다.
 
-[About Me](https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-intro) | [My blog](https://velog.io/@kkuldangi3/posts) | [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
+[About Me](https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-intro) | [My blog](https://velog.io/@kkuldangi3/posts)
 
 **Email**: kkuldangi2@gmail.com
 
