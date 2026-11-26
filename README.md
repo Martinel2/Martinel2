@@ -9,7 +9,7 @@ LLM Wiki 기반 AI 지식 관리 워크스페이스 팀프로젝트 Fruition에�
 
 [About Me](https://martinel2.github.io/?utm_source=github&utm_medium=referral&utm_campaign=profile&utm_content=header-intro) | [My blog](https://velog.io/@kkuldangi3/posts) | [LinkedIn](https://www.linkedin.com/in/%EC%9E%AC%ED%98%95-%EA%B9%80-b75920345/)
 
-**Email**: kkuldangi2@gmail.com
+**Email**: kkuldangi3@naver.com
 
 ## 핵심 경험
 
